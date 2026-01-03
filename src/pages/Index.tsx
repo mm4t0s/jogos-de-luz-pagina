@@ -1,3 +1,4 @@
+import { BrandHeader } from "@/components/sections/BrandHeader";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { TransformationSection } from "@/components/sections/TransformationSection";
 import { ProductCarouselSection } from "@/components/sections/ProductCarouselSection";
@@ -78,7 +79,8 @@ const activitiesImages = [
 
 const Index = () => {
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-background relative">
+      <BrandHeader />
       <HeroSection />
       <TransformationSection />
       

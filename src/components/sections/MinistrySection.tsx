@@ -24,14 +24,14 @@ export const MinistrySection = () => {
             </h2>
 
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-6 md:mb-8 px-2">
-              O Kit Jogos de Luz foi criado para <strong className="text-foreground">eliminar o improviso no ensino infantil</strong>, oferecendo material bíblico pronto, didático e envolvente, para que líderes e professores foquem no ensino da Palavra com excelência.
+              Desenvolvido para <strong className="text-foreground">eliminar o improviso e economizar tempo</strong> de quem ensina. Material bíblico pronto, didático e envolvente para que líderes, professores de EBD e voluntários foquem no que importa: ensinar a Palavra com excelência.
             </p>
 
             <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-6 px-4 sm:px-0">
               {[
-                { icon: BookOpen, text: "Material didático pronto" },
-                { icon: Users, text: "Fácil de aplicar em grupo" },
-                { icon: Church, text: "Ideal para igrejas" },
+                { icon: BookOpen, text: "Material pronto para usar" },
+                { icon: Users, text: "Ideal para grupos e turmas" },
+                { icon: Church, text: "Perfeito para igrejas e EBD" },
               ].map((item) => (
                 <div key={item.text} className="flex items-center justify-center gap-2 text-muted-foreground text-sm sm:text-base">
                   <item.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary flex-shrink-0" />
