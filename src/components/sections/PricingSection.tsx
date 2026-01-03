@@ -128,6 +128,28 @@ export const PricingSection = () => {
                   </motion.div>
 
                   <div className="p-5 md:p-8">
+                    {/* Best seller badge */}
+                    <motion.div
+                      initial={{ opacity: 0, y: -20, scale: 0.8 }}
+                      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ type: "spring", stiffness: 200, delay: 0.25 }}
+                      className="flex justify-center mb-4"
+                    >
+                      <div className="relative">
+                        {/* Glow effect */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-accent via-primary to-accent rounded-full blur-md opacity-60 animate-pulse" />
+                        
+                        <div className="relative flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-primary via-accent to-primary rounded-full shadow-gold border border-white/20">
+                          <Star className="w-4 h-4 text-primary-foreground fill-primary-foreground" />
+                          <span className="text-primary-foreground font-bold text-sm tracking-wide">
+                            MAIS VENDIDO
+                          </span>
+                          <Star className="w-4 h-4 text-primary-foreground fill-primary-foreground" />
+                        </div>
+                      </div>
+                    </motion.div>
+
                     {/* Banner Image with premium frame */}
                     <motion.div 
                       initial={{ opacity: 0, scale: 0.95 }}
