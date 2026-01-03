@@ -105,13 +105,15 @@ export const ProductCarouselSection = ({
                           {isStacked ? (
                             // Stacked: 2 horizontal images in one vertical container
                             <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-elevated group cursor-pointer transition-all duration-300 hover:shadow-3d bg-card flex flex-col gap-2">
-                              {item.images.map((img, imgIndex) => (
+                                {item.images.map((img, imgIndex) => (
                                 <img
                                   key={imgIndex}
                                   src={img.src}
                                   alt={img.alt}
+                                  loading="lazy"
                                   className="w-full h-auto object-cover"
                                 />
+                              ))}
                               ))}
                             </div>
                           ) : (
@@ -120,6 +122,7 @@ export const ProductCarouselSection = ({
                               <img
                                 src={(isSingle || isSimple) ? (item as ProductImage | SingleImage).src : ""}
                                 alt={(isSingle || isSimple) ? (item as ProductImage | SingleImage).alt : ""}
+                                loading="lazy"
                                 className="w-full h-auto object-cover"
                               />
                             </div>
