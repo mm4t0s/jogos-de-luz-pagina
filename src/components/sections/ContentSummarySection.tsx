@@ -3,9 +3,10 @@ import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 
 const summaryItems = [
-  "Mais de 20 jogos bíblicos (físicos e digitais)",
-  "Mais de 600 atividades cristãs prontas",
+  "Mais de 20 jogos bíblicos prontos para imprimir",
+  "Mais de 600 atividades cristãs organizadas por tema",
   "Mais de 75 desenhos bíblicos para colorir",
+  "Bíblia ilustrada e devocional infantil inclusos",
 ];
 
 export const ContentSummarySection = () => {
@@ -18,7 +19,7 @@ export const ContentSummarySection = () => {
           <div className="max-w-2xl mx-auto">
             <div className="p-5 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl bg-secondary/50 border border-border/50">
               <h3 className="font-display text-xl md:text-2xl font-bold text-foreground mb-6">
-                No Kit Premium Jogos de Luz você recebe:
+                O que você recebe no Kit Completo:
               </h3>
 
               <div className="space-y-4">
@@ -40,7 +41,7 @@ export const ContentSummarySection = () => {
               </div>
 
               <p className="text-muted-foreground text-sm mt-6">
-                Tudo organizado para uso ao longo do ano, em casa, na igreja ou no ministério infantil.
+                Material organizado para uso contínuo ao longo do ano. Pronto para aplicar em casa, na igreja ou no ministério infantil — elimina improviso e economiza tempo.
               </p>
             </div>
           </div>

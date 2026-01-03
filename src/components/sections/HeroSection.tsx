@@ -17,7 +17,7 @@ export const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen overflow-hidden flex items-center pt-8 pb-12 md:py-0">
+    <section className="relative min-h-screen overflow-hidden flex items-center pt-16 pb-12 md:pt-8 md:py-0">
       {/* Background with gradient */}
       <div className="absolute inset-0 gradient-hero" />
       

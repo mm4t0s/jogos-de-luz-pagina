@@ -20,7 +20,7 @@ export const ClosingSection = () => {
             </motion.div>
 
             <p className="font-display text-xl md:text-2xl font-medium text-foreground leading-relaxed italic">
-              "Ensinar a Palavra às crianças não precisa ser difícil. Com o material certo, pode ser leve, organizado e transformador."
+              "Ensinar a Palavra às crianças não precisa ser difícil. Com o material certo, pode ser leve, organizado e inesquecível."
             </p>
           </div>
         </ScrollReveal>

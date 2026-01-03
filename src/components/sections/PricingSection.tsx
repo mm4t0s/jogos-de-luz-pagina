@@ -6,12 +6,12 @@ import { useRef } from "react";
 import bannerCheckout from "@/assets/banner-checkout.png";
 
 const benefits = [
-  "Kit cristão completo para crianças de 4 a 12 anos",
-  "+20 jogos bíblicos para aprendizado divertido",
-  "+600 atividades bíblicas prontas para imprimir",
+  "Kit completo para crianças de 4 a 12 anos",
+  "+20 jogos bíblicos prontos para imprimir",
+  "+600 atividades cristãs organizadas por tema",
   "+75 desenhos bíblicos para colorir",
-  "Bíblia ilustrada + devocional infantil inclusos",
-  "Material prático para casa, igreja ou ministério",
+  "Bíblia ilustrada e devocional infantil inclusos",
+  "Uso vitalício em casa, igreja ou ministério infantil",
 ];
 
 // Corner decoration component
@@ -185,7 +185,7 @@ export const PricingSection = () => {
                         Kit Premium Jogos de Luz
                       </h2>
                       <p className="text-muted-foreground mt-2 text-sm md:text-base">
-                        Um caminho simples para ensinar valores cristãos em casa, de forma leve e sem telas.
+                        Material pronto para ensinar a Palavra de forma leve, organizada e sem telas.
                       </p>
                     </motion.div>
 
@@ -269,7 +269,7 @@ export const PricingSection = () => {
                         <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                         <span className="relative flex items-center justify-center gap-2">
                           <Download className="w-5 h-5" />
-                          Quero meu Kit Premium agora!
+                          Quero meu Kit Completo agora
                         </span>
                       </Button>
                     </motion.div>
