@@ -10,80 +10,47 @@ import { Footer } from "@/components/sections/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
-      {/* Hero */}
+    <main className="min-h-screen bg-background">
       <HeroSection />
-
-      {/* Transformation - Before/After */}
       <TransformationSection />
-
-      {/* Products Carousel - Jogos */}
+      
+      {/* Product Carousels */}
       <ProductCarouselSection
         id="jogos"
-        title="Alguns dos conteúdos incluídos no Kit Premium Jogos de Luz"
-        subtitle="As imagens abaixo representam apenas uma parte do material disponível no acesso completo."
+        title="+ de 20 Jogos Bíblicos"
+        subtitle="As imagens abaixo representam apenas uma pequena parte do material disponível no acesso completo ao Kit Premium Jogos de Luz."
         accentColor="primary"
         placeholderCount={6}
-        placeholderLabels={[
-          "Jogo das 3 Pistas",
-          "UNO Cristão Gerações",
-          "Jogo da Memória Bíblica",
-          "Quiz Bíblico",
-          "Caça ao Tesouro",
-          "Dominó dos Heróis",
-        ]}
+        placeholderLabels={["Jogo 1", "Jogo 2", "Jogo 3", "Jogo 4", "Jogo 5", "Jogo 6"]}
       />
-
-      {/* Content Summary */}
-      <ContentSummarySection />
-
-      {/* Products Carousel - Atividades */}
+      
       <ProductCarouselSection
         id="atividades"
-        title="+600 Atividades Cristãs Prontas"
-        subtitle="Material organizado e pronto para imprimir"
+        title="+ de 600 Atividades Cristãs"
+        subtitle="As imagens abaixo representam apenas uma pequena parte do material disponível no acesso completo ao Kit Premium Jogos de Luz."
         accentColor="gold"
-        placeholderCount={5}
-        placeholderLabels={[
-          "Atividade 1",
-          "Atividade 2",
-          "Atividade 3",
-          "Atividade 4",
-          "Atividade 5",
-        ]}
+        placeholderCount={6}
+        placeholderLabels={["Atividade 1", "Atividade 2", "Atividade 3", "Atividade 4", "Atividade 5", "Atividade 6"]}
       />
-
-      {/* Products Carousel - Desenhos */}
+      
       <ProductCarouselSection
         id="desenhos"
-        title="+75 Desenhos Bíblicos para Colorir"
-        subtitle="Ilustrações exclusivas para estimular a criatividade"
+        title="+ de 75 Desenhos Bíblicos para Colorir"
+        subtitle="As imagens abaixo representam apenas uma pequena parte do material disponível no acesso completo ao Kit Premium Jogos de Luz."
         accentColor="accent"
-        placeholderCount={5}
-        placeholderLabels={[
-          "Desenho 1",
-          "Desenho 2",
-          "Desenho 3",
-          "Desenho 4",
-          "Desenho 5",
-        ]}
+        placeholderCount={6}
+        placeholderLabels={["Desenho 1", "Desenho 2", "Desenho 3", "Desenho 4", "Desenho 5", "Desenho 6"]}
       />
 
-      {/* Ministry Section */}
+      {/* Summary Box - after all carousels */}
+      <ContentSummarySection />
+      
       <MinistrySection />
-
-      {/* Pricing */}
       <PricingSection />
-
-      {/* Guarantee */}
       <GuaranteeSection />
-
-      {/* Closing */}
       <ClosingSection />
-
-      {/* Footer */}
       <Footer />
-    </div>
+    </main>
   );
 };
 
