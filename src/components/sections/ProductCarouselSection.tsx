@@ -14,15 +14,28 @@ interface ProductImage {
   alt: string;
 }
 
+interface StackedImages {
+  type: "stacked";
+  images: ProductImage[];
+}
+
+interface SingleImage {
+  type: "single";
+  src: string;
+  alt: string;
+}
+
+type CarouselImage = ProductImage | StackedImages | SingleImage;
+
 interface ProductCarouselSectionProps {
   id?: string;
   title: string;
   subtitle?: string;
   accentColor?: "primary" | "gold" | "accent";
   // Real images to display
-  images?: ProductImage[];
+  images?: CarouselImage[];
   // Layout orientation
-  layout?: "vertical" | "horizontal";
+  layout?: "vertical" | "horizontal" | "stacked";
   // Placeholder fallback
   placeholderCount?: number;
   placeholderLabels?: string[];
@@ -74,31 +87,43 @@ export const ProductCarouselSection = ({
               <CarouselContent className="-ml-2 sm:-ml-4">
                 {hasImages ? (
                   // Render real images
-                  images.map((image, index) => {
-                    // For "horizontal" layout, first image stays vertical, rest are horizontal
-                    const isHorizontalItem = layout === "horizontal" && index > 0;
+                  images.map((item, index) => {
+                    const isStacked = "type" in item && item.type === "stacked";
+                    const isSingle = "type" in item && item.type === "single";
+                    const isSimple = !("type" in item);
                     
                     return (
                       <CarouselItem 
                         key={index} 
-                        className={`pl-2 sm:pl-4 ${
-                          isHorizontalItem 
-                            ? "basis-[90%] sm:basis-[70%] lg:basis-1/2" 
-                            : "basis-[85%] sm:basis-1/2 lg:basis-1/3"
-                        }`}
+                        className="pl-2 sm:pl-4 basis-[85%] sm:basis-1/2 lg:basis-1/3"
                       >
                         <motion.div
                           whileHover={{ y: -5, scale: 1.02 }}
                           transition={{ duration: 0.2 }}
                           className="h-full"
                         >
-                          <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-elevated group cursor-pointer transition-all duration-300 hover:shadow-3d bg-card">
-                            <img
-                              src={image.src}
-                              alt={image.alt}
-                              className="w-full h-auto object-cover"
-                            />
-                          </div>
+                          {isStacked ? (
+                            // Stacked: 2 horizontal images in one vertical container
+                            <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-elevated group cursor-pointer transition-all duration-300 hover:shadow-3d bg-card flex flex-col gap-2">
+                              {item.images.map((img, imgIndex) => (
+                                <img
+                                  key={imgIndex}
+                                  src={img.src}
+                                  alt={img.alt}
+                                  className="w-full h-auto object-cover"
+                                />
+                              ))}
+                            </div>
+                          ) : (
+                            // Single or simple image
+                            <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-elevated group cursor-pointer transition-all duration-300 hover:shadow-3d bg-card">
+                              <img
+                                src={(isSingle || isSimple) ? (item as ProductImage | SingleImage).src : ""}
+                                alt={(isSingle || isSimple) ? (item as ProductImage | SingleImage).alt : ""}
+                                className="w-full h-auto object-cover"
+                              />
+                            </div>
+                          )}
                         </motion.div>
                       </CarouselItem>
                     );

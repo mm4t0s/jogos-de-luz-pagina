@@ -31,7 +31,7 @@ import promessaAbraao from "@/assets/drawings/promessa-abraao.png";
 import sarcaArdente from "@/assets/drawings/sarca-ardente.png";
 import pragasEgito from "@/assets/drawings/pragas-egito.png";
 import multiplicacaoPaes from "@/assets/drawings/multiplicacao-paes.png";
-import conversaoPaulo from "@/assets/drawings/conversao-paulo.png";
+// Removed conversaoPaulo - not needed
 
 const gamesImages = [
   { src: game3Pistas, alt: "Jogo das 3 Pistas Bíblicas" },
@@ -42,15 +42,30 @@ const gamesImages = [
   { src: gameMico, alt: "Jogo do Mico Bíblico" },
 ];
 
+// Drawings: first is single cover, then 3 stacked pairs (2 horizontal images per vertical block)
 const drawingsImages = [
-  { src: desenhosCover, alt: "75 Desenhos Bíblicos para Colorir" },
-  { src: aQueda, alt: "A Queda - Gênesis 3:6" },
-  { src: caimAbel, alt: "Caim e Abel - Gênesis 4:8" },
-  { src: promessaAbraao, alt: "A Promessa a Abraão - Gênesis 12:2-3" },
-  { src: sarcaArdente, alt: "A Sarça Ardente - Êxodo 3:2-4" },
-  { src: pragasEgito, alt: "As 10 Pragas do Egito - Êxodo 7-12" },
-  { src: multiplicacaoPaes, alt: "A Multiplicação dos Pães e Peixes - João 6:11" },
-  { src: conversaoPaulo, alt: "A Conversão de Paulo - Atos 9:4-5" },
+  { type: "single" as const, src: desenhosCover, alt: "75 Desenhos Bíblicos para Colorir" },
+  { 
+    type: "stacked" as const, 
+    images: [
+      { src: aQueda, alt: "A Queda - Gênesis 3:6" },
+      { src: caimAbel, alt: "Caim e Abel - Gênesis 4:8" },
+    ]
+  },
+  { 
+    type: "stacked" as const, 
+    images: [
+      { src: promessaAbraao, alt: "A Promessa a Abraão - Gênesis 12:2-3" },
+      { src: sarcaArdente, alt: "A Sarça Ardente - Êxodo 3:2-4" },
+    ]
+  },
+  { 
+    type: "stacked" as const, 
+    images: [
+      { src: pragasEgito, alt: "As 10 Pragas do Egito - Êxodo 7-12" },
+      { src: multiplicacaoPaes, alt: "A Multiplicação dos Pães e Peixes - João 6:11" },
+    ]
+  },
 ];
 
 const activitiesImages = [
@@ -90,7 +105,7 @@ const Index = () => {
         subtitle="As imagens abaixo representam apenas uma pequena parte do material disponível no acesso completo ao Kit Premium Jogos de Luz."
         accentColor="accent"
         images={drawingsImages}
-        layout="horizontal"
+        layout="stacked"
       />
 
       {/* Summary Box - after all carousels */}
