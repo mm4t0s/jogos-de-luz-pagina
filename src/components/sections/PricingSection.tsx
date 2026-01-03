@@ -14,6 +14,34 @@ const benefits = [
   "Material prático para casa, igreja ou ministério",
 ];
 
+// Corner decoration component
+const CornerDecoration = ({ position }: { position: 'tl' | 'tr' | 'bl' | 'br' }) => {
+  const positions = {
+    tl: 'top-0 left-0',
+    tr: 'top-0 right-0 rotate-90',
+    bl: 'bottom-0 left-0 -rotate-90',
+    br: 'bottom-0 right-0 rotate-180',
+  };
+
+  return (
+    <div className={`absolute ${positions[position]} w-12 h-12 pointer-events-none`}>
+      <svg viewBox="0 0 48 48" fill="none" className="w-full h-full text-primary">
+        <path
+          d="M0 0 L48 0 L48 8 L8 8 L8 48 L0 48 Z"
+          fill="currentColor"
+          opacity="0.15"
+        />
+        <path
+          d="M0 0 L24 0 L24 4 L4 4 L4 24 L0 24 Z"
+          fill="currentColor"
+          opacity="0.4"
+        />
+        <circle cx="6" cy="6" r="3" fill="currentColor" opacity="0.6" />
+      </svg>
+    </div>
+  );
+};
+
 export const PricingSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
@@ -60,21 +88,39 @@ export const PricingSection = () => {
         >
           <ScrollReveal>
             <TiltCard intensity={3}>
-              <div className="relative rounded-3xl overflow-hidden">
-                {/* Animated border glow */}
-                <div className="absolute -inset-[2px] bg-gradient-to-r from-primary via-accent to-primary rounded-3xl opacity-75 blur-sm animate-pulse" />
-                <div className="absolute -inset-[1px] bg-gradient-to-r from-primary via-accent to-primary rounded-3xl opacity-50" />
+              {/* Premium frame container */}
+              <div className="relative p-2 md:p-3">
+                {/* Outer decorative border */}
+                <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-primary/30 via-accent/20 to-primary/30" />
                 
-                <div className="relative bg-card rounded-3xl overflow-hidden">
+                {/* Decorative pattern overlay */}
+                <div 
+                  className="absolute inset-0 rounded-[2rem] opacity-10"
+                  style={{
+                    backgroundImage: `radial-gradient(circle at 2px 2px, hsl(var(--primary)) 1px, transparent 0)`,
+                    backgroundSize: '16px 16px'
+                  }}
+                />
+
+                {/* Inner card */}
+                <div className="relative rounded-3xl overflow-hidden bg-gradient-to-b from-card via-card to-secondary/30 shadow-3d">
+                  {/* Corner decorations */}
+                  <CornerDecoration position="tl" />
+                  <CornerDecoration position="tr" />
+                  <CornerDecoration position="bl" />
+                  <CornerDecoration position="br" />
+
                   {/* Top ribbon */}
                   <motion.div 
                     initial={{ y: -100 }}
                     whileInView={{ y: 0 }}
                     viewport={{ once: true }}
                     transition={{ type: "spring", stiffness: 100, delay: 0.2 }}
-                    className="bg-gradient-to-r from-primary via-accent to-primary py-3 px-4"
+                    className="relative bg-gradient-to-r from-primary via-accent to-primary py-3 px-4"
                   >
-                    <p className="text-center text-primary-foreground font-bold text-sm md:text-base flex items-center justify-center gap-2">
+                    {/* Ribbon shine effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+                    <p className="relative text-center text-primary-foreground font-bold text-sm md:text-base flex items-center justify-center gap-2">
                       <Sparkles className="w-4 h-4" />
                       OFERTA ESPECIAL POR TEMPO LIMITADO
                       <Sparkles className="w-4 h-4" />
@@ -82,21 +128,43 @@ export const PricingSection = () => {
                   </motion.div>
 
                   <div className="p-5 md:p-8">
-                    {/* Banner Image with shine effect */}
+                    {/* Banner Image with premium frame */}
                     <motion.div 
                       initial={{ opacity: 0, scale: 0.95 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.6, delay: 0.3 }}
-                      className="relative rounded-2xl overflow-hidden mb-6 shadow-3d shine"
+                      className="relative mb-6"
                     >
-                      <img
-                        src={bannerCheckout}
-                        alt="Kit Premium Jogos de Luz - Ensinar a Bíblia pode ser leve, divertido e inesquecível"
-                        className="w-full h-auto"
-                      />
-                      {/* Overlay glow */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-transparent pointer-events-none" />
+                      {/* Image frame border */}
+                      <div className="absolute -inset-1 bg-gradient-to-br from-primary/40 via-accent/30 to-primary/40 rounded-2xl" />
+                      <div className="absolute -inset-0.5 bg-gradient-to-br from-primary/20 via-transparent to-accent/20 rounded-2xl" />
+                      
+                      <div className="relative rounded-xl overflow-hidden shadow-elevated">
+                        <img
+                          src={bannerCheckout}
+                          alt="Kit Premium Jogos de Luz - Ensinar a Bíblia pode ser leve, divertido e inesquecível"
+                          className="w-full h-auto"
+                        />
+                        {/* Overlay glow */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-transparent pointer-events-none" />
+                      </div>
+                    </motion.div>
+
+                    {/* Title */}
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.35 }}
+                      className="text-center mb-6"
+                    >
+                      <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground">
+                        Kit Premium Jogos de Luz
+                      </h2>
+                      <p className="text-muted-foreground mt-2 text-sm md:text-base">
+                        Um caminho simples para ensinar valores cristãos em casa, de forma leve e sem telas.
+                      </p>
                     </motion.div>
 
                     {/* Benefits list */}
@@ -108,12 +176,12 @@ export const PricingSection = () => {
                           whileInView={{ opacity: 1, x: 0 }}
                           viewport={{ once: true }}
                           transition={{ delay: 0.4 + index * 0.05 }}
-                          className="flex items-start gap-3 p-3 rounded-xl bg-secondary/50 border border-primary/10"
+                          className="flex items-center gap-3 p-3 rounded-xl bg-gradient-to-r from-secondary/80 to-secondary/40 border border-primary/10 hover:border-primary/30 transition-colors"
                         >
-                          <div className="w-5 h-5 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-0.5">
-                            <Check className="w-3 h-3 text-primary-foreground" />
+                          <div className="w-6 h-6 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center flex-shrink-0 shadow-sm">
+                            <Check className="w-3.5 h-3.5 text-primary-foreground" />
                           </div>
-                          <span className="text-foreground text-sm">{benefit}</span>
+                          <span className="text-foreground text-sm font-medium">{benefit}</span>
                         </motion.div>
                       ))}
                     </div>
@@ -124,30 +192,40 @@ export const PricingSection = () => {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: 0.5 }}
-                      className="relative text-center p-6 md:p-8 rounded-2xl bg-gradient-to-b from-secondary via-secondary/80 to-secondary/50 border border-primary/20 mb-6"
+                      className="relative text-center p-6 md:p-8 rounded-2xl mb-6 overflow-hidden"
                     >
-                      {/* Corner decorations */}
-                      <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-primary/40 rounded-tl-xl" />
-                      <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-primary/40 rounded-tr-xl" />
-                      <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-primary/40 rounded-bl-xl" />
-                      <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-primary/40 rounded-br-xl" />
+                      {/* Price box background */}
+                      <div className="absolute inset-0 bg-gradient-to-b from-secondary via-muted/50 to-secondary/80" />
+                      
+                      {/* Decorative border */}
+                      <div className="absolute inset-0 rounded-2xl border-2 border-primary/20" />
+                      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+                      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
 
-                      <p className="text-muted-foreground mb-2 text-sm">De <span className="line-through">R$97</span> por apenas</p>
-                      <div className="flex items-baseline justify-center gap-1">
-                        <span className="text-2xl md:text-3xl font-bold text-foreground">R$</span>
-                        <motion.span 
-                          initial={{ scale: 0.5, opacity: 0 }}
-                          whileInView={{ scale: 1, opacity: 1 }}
-                          viewport={{ once: true }}
-                          transition={{ type: "spring", stiffness: 200, delay: 0.6 }}
-                          className="font-display text-6xl md:text-8xl font-bold text-gradient"
-                        >
-                          47
-                        </motion.span>
+                      {/* Corner accents */}
+                      <div className="absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 border-primary/50 rounded-tl-lg" />
+                      <div className="absolute top-2 right-2 w-4 h-4 border-t-2 border-r-2 border-primary/50 rounded-tr-lg" />
+                      <div className="absolute bottom-2 left-2 w-4 h-4 border-b-2 border-l-2 border-primary/50 rounded-bl-lg" />
+                      <div className="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-primary/50 rounded-br-lg" />
+
+                      <div className="relative">
+                        <p className="text-muted-foreground mb-2 text-sm">De <span className="line-through">R$97</span> por apenas</p>
+                        <div className="flex items-baseline justify-center gap-1">
+                          <span className="text-2xl md:text-3xl font-bold text-foreground">R$</span>
+                          <motion.span 
+                            initial={{ scale: 0.5, opacity: 0 }}
+                            whileInView={{ scale: 1, opacity: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ type: "spring", stiffness: 200, delay: 0.6 }}
+                            className="font-display text-6xl md:text-8xl font-bold text-gradient drop-shadow-sm"
+                          >
+                            47
+                          </motion.span>
+                        </div>
+                        <p className="text-muted-foreground text-sm mt-3">
+                          Pagamento único • Download imediato • Uso vitalício
+                        </p>
                       </div>
-                      <p className="text-muted-foreground text-sm mt-3">
-                        Pagamento único • Download imediato • Uso vitalício
-                      </p>
                     </motion.div>
 
                     {/* CTA Button with pulse effect */}
@@ -182,15 +260,15 @@ export const PricingSection = () => {
                       transition={{ delay: 0.8 }}
                       className="flex flex-wrap items-center justify-center gap-4 md:gap-6 mt-6 text-xs md:text-sm text-muted-foreground"
                     >
-                      <div className="flex items-center gap-1.5 bg-secondary/80 px-3 py-1.5 rounded-full">
+                      <div className="flex items-center gap-1.5 bg-secondary/80 px-3 py-1.5 rounded-full border border-primary/10">
                         <Shield className="w-4 h-4 text-primary flex-shrink-0" />
                         <span>Garantia de 7 dias</span>
                       </div>
-                      <div className="flex items-center gap-1.5 bg-secondary/80 px-3 py-1.5 rounded-full">
+                      <div className="flex items-center gap-1.5 bg-secondary/80 px-3 py-1.5 rounded-full border border-primary/10">
                         <Sparkles className="w-4 h-4 text-primary flex-shrink-0" />
                         <span>Compra 100% segura</span>
                       </div>
-                      <div className="flex items-center gap-1.5 bg-secondary/80 px-3 py-1.5 rounded-full">
+                      <div className="flex items-center gap-1.5 bg-secondary/80 px-3 py-1.5 rounded-full border border-primary/10">
                         <Download className="w-4 h-4 text-primary flex-shrink-0" />
                         <span>Acesso imediato</span>
                       </div>
