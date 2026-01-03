@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Check, Download, Shield, Users, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { RatingStars } from "@/components/ui/rating-stars";
-import heroMockup from "@/assets/hero-mockup.jpg";
+import heroMockup from "@/assets/hero-kit-jogos-luz.png";
 
 const proofChips = [
   { icon: Check, text: "Pagamento único" },
