@@ -1,57 +1,111 @@
-import { ScrollReveal } from "@/components/ui/scroll-reveal";
+import { ScrollReveal, TiltCard } from "@/components/ui/scroll-reveal";
 import { motion } from "framer-motion";
-import { Check, Gamepad2, Palette, Book, Heart, FileText, Sparkles } from "lucide-react";
+import { Check, Gamepad2, Palette, Book, Heart, FileText, Sparkles, Gift } from "lucide-react";
 
 const includes = [
-  { icon: Gamepad2, text: "+20 jogos bíblicos interativos" },
-  { icon: Sparkles, text: "+600 atividades cristãs prontas" },
-  { icon: Palette, text: "+75 desenhos bíblicos para colorir" },
-  { icon: Book, text: "Bíblia ilustrada (Antigo e Novo Testamento)" },
-  { icon: Heart, text: "Devocional infantil simples e profundo" },
-  { icon: FileText, text: "Material 100% digital para baixar e imprimir" },
+  { 
+    icon: Palette, 
+    title: "25 Livros Cristãos para Colorir",
+    description: "Uma coleção completa com histórias bíblicas ilustradas de forma simples, leve e cativante.",
+    value: "49,90"
+  },
+  { 
+    icon: Gamepad2, 
+    title: "5 Jogos Bíblicos Interativos",
+    description: "Atividades dinâmicas que transformam o aprendizado em diversão.",
+    value: "24,90"
+  },
+  { 
+    icon: Heart, 
+    title: "Devocional Infantil Completo",
+    description: "Um guia lindo e delicado para ajudar as crianças a criarem o hábito da oração.",
+    value: "29,90"
+  },
+  { 
+    icon: Book, 
+    title: "Cartões Bíblicos para Memorização",
+    description: "Versículos selecionados para fortalecer o ensino da Palavra de forma prática.",
+    value: "19,90"
+  },
+  { 
+    icon: Sparkles, 
+    title: "Desafio Bíblico de 7 Dias",
+    description: "Uma jornada simples e transformadora para incentivar a leitura da Bíblia.",
+    value: "19,90"
+  },
+  { 
+    icon: Gift, 
+    title: "+100 Adesivos Cristãos",
+    description: "Adesivos exclusivos, coloridos e temáticos para usar em atividades e presentes.",
+    value: "8,90"
+  },
 ];
 
 export const IncludesSection = () => {
   return (
-    <section className="py-20 md:py-28 bg-secondary/30">
-      <div className="container">
+    <section id="conteudo" className="py-24 md:py-32 relative overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 bg-secondary/30" />
+
+      <div className="container relative z-10">
         <ScrollReveal>
-          <div className="text-center mb-12">
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              O que você recebe
+          <div className="text-center mb-16">
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 italic">
+              O que está incluído no pacote
             </h2>
-            <p className="text-lg text-muted-foreground">
-              Tudo em um só kit, pronto para usar
-            </p>
+            <div className="inline-block">
+              <span className="inline-block px-6 py-3 rounded-xl bg-primary text-primary-foreground font-bold text-lg">
+                Lista de conteúdos:
+              </span>
+            </div>
           </div>
         </ScrollReveal>
 
-        <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-4">
-            {includes.map((item, index) => (
-              <ScrollReveal key={item.text} delay={index * 0.1}>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {includes.map((item, index) => (
+            <ScrollReveal key={item.title} delay={index * 0.1}>
+              <TiltCard intensity={5}>
                 <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  className="flex items-center gap-4 p-5 rounded-2xl bg-card shadow-soft border border-border/50 hover:border-primary/30 hover:shadow-elevated transition-all duration-300"
+                  whileHover={{ y: -5 }}
+                  className="relative h-full p-6 rounded-3xl bg-card shadow-soft border border-border/50 hover:shadow-elevated hover:border-primary/20 transition-all duration-300 group"
                 >
-                  <div className="flex-shrink-0 w-12 h-12 rounded-xl gradient-cta flex items-center justify-center shadow-gold">
-                    <item.icon className="w-6 h-6 text-primary-foreground" />
+                  {/* Icon container */}
+                  <div className="flex justify-center mb-6">
+                    <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <item.icon className="w-10 h-10 text-primary" />
+                    </div>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <Check className="w-5 h-5 text-primary flex-shrink-0" />
-                    <span className="text-lg font-medium text-foreground">{item.text}</span>
-                  </div>
-                </motion.div>
-              </ScrollReveal>
-            ))}
-          </div>
 
-          <ScrollReveal delay={0.6}>
-            <p className="text-center text-muted-foreground mt-8 italic">
-              As imagens exibidas representam apenas uma parte do conteúdo completo disponível no kit.
-            </p>
-          </ScrollReveal>
+                  {/* Content */}
+                  <div className="text-center">
+                    <h3 className="font-display text-xl font-bold text-foreground mb-3">
+                      {item.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                      {item.description}
+                    </p>
+                    
+                    {/* Value */}
+                    <div className="flex items-center justify-center gap-2">
+                      <span className="text-muted-foreground italic">(Valor:</span>
+                      <span className="text-destructive font-bold line-through italic">R${item.value}</span>
+                      <span className="text-muted-foreground italic">)</span>
+                    </div>
+                  </div>
+
+                  {/* Decorative corner */}
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-primary/5 to-transparent rounded-tr-3xl rounded-bl-[100px]" />
+                </motion.div>
+              </TiltCard>
+            </ScrollReveal>
+          ))}
         </div>
+
+        <ScrollReveal delay={0.6}>
+          <p className="text-center text-muted-foreground mt-12 italic max-w-2xl mx-auto">
+            As imagens exibidas representam apenas uma parte do conteúdo completo disponível no kit.
+          </p>
+        </ScrollReveal>
       </div>
     </section>
   );

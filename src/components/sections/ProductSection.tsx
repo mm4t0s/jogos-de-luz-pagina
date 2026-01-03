@@ -1,9 +1,11 @@
-import { ScrollReveal } from "@/components/ui/scroll-reveal";
-import { Clock, FileText, Users, Zap } from "lucide-react";
+import { ScrollReveal, TiltCard, FloatingElement } from "@/components/ui/scroll-reveal";
+import { motion } from "framer-motion";
+import { Clock, FileText, Users, Zap, Sparkles } from "lucide-react";
+import { Product3DMockup } from "@/components/ui/product-3d-mockup";
 import heroMockup from "@/assets/hero-mockup.jpg";
 
 const features = [
-  { icon: Clock, label: "10–20 minutos", sub: "por atividade" },
+  { icon: Clock, label: "10–20 min", sub: "por atividade" },
   { icon: FileText, label: "PDFs prontos", sub: "para imprimir" },
   { icon: Users, label: "Para toda", sub: "a família" },
   { icon: Zap, label: "Acesso", sub: "imediato" },
@@ -11,13 +13,35 @@ const features = [
 
 export const ProductSection = () => {
   return (
-    <section className="py-20 md:py-28 bg-card">
-      <div className="container">
+    <section className="py-24 md:py-32 relative overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 bg-card" />
+      
+      {/* Subtle pattern */}
+      <div className="absolute inset-0 opacity-[0.015]"
+        style={{
+          backgroundImage: `radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)`,
+          backgroundSize: '40px 40px',
+        }}
+      />
+
+      {/* Glow effects */}
+      <FloatingElement delay={0} duration={12} y={30} className="absolute top-0 left-1/4">
+        <div className="w-[500px] h-[500px] bg-gradient-radial from-primary/8 to-transparent rounded-full blur-3xl" />
+      </FloatingElement>
+
+      <div className="container relative z-10">
         <ScrollReveal>
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary font-medium text-sm mb-6">
+            <motion.span 
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6"
+            >
+              <Sparkles className="w-4 h-4" />
               Conheça o Kit
-            </span>
+            </motion.span>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
               Apresentamos o{" "}
               <span className="text-gradient">Kit Premium Jogos de Luz</span>
@@ -31,30 +55,38 @@ export const ProductSection = () => {
 
         {/* Features Grid */}
         <ScrollReveal delay={0.2}>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl mx-auto mb-16">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl mx-auto mb-20">
             {features.map((feature, index) => (
-              <div
+              <motion.div
                 key={feature.label}
-                className="flex flex-col items-center p-6 rounded-2xl bg-secondary/50 border border-border/50 hover:shadow-soft transition-shadow duration-300"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ y: -5, scale: 1.02 }}
+                className="relative"
               >
-                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-4">
-                  <feature.icon className="w-7 h-7 text-primary" />
-                </div>
-                <span className="font-bold text-foreground text-lg">{feature.label}</span>
-                <span className="text-muted-foreground text-sm">{feature.sub}</span>
-              </div>
+                <TiltCard intensity={8}>
+                  <div className="flex flex-col items-center p-6 rounded-2xl bg-background border border-border/50 shadow-soft hover:shadow-elevated transition-shadow duration-300">
+                    <div className="w-14 h-14 rounded-2xl gradient-cta flex items-center justify-center mb-4 shadow-gold">
+                      <feature.icon className="w-7 h-7 text-primary-foreground" />
+                    </div>
+                    <span className="font-bold text-foreground text-lg">{feature.label}</span>
+                    <span className="text-muted-foreground text-sm">{feature.sub}</span>
+                  </div>
+                </TiltCard>
+              </motion.div>
             ))}
           </div>
         </ScrollReveal>
 
         {/* Product Preview */}
-        <ScrollReveal delay={0.3}>
-          <div className="relative max-w-4xl mx-auto">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 rounded-3xl blur-3xl transform scale-90" />
-            <img
-              src={heroMockup}
+        <ScrollReveal delay={0.3} scale>
+          <div className="max-w-5xl mx-auto">
+            <Product3DMockup
+              image={heroMockup}
               alt="Kit Premium Jogos de Luz - Preview"
-              className="relative w-full rounded-3xl shadow-elevated"
+              className="w-full"
             />
           </div>
         </ScrollReveal>

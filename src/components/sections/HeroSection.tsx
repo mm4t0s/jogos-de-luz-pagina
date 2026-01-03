@@ -1,13 +1,16 @@
 import { motion } from "framer-motion";
-import { Check, Download, Users, Zap } from "lucide-react";
+import { Check, Download, Users, Zap, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { RatingStars } from "@/components/ui/rating-stars";
+import { Product3DMockup } from "@/components/ui/product-3d-mockup";
+import { FloatingElement } from "@/components/ui/scroll-reveal";
 import heroMockup from "@/assets/hero-mockup.jpg";
 
 const proofChips = [
-  { icon: Download, text: "PDF pronto para imprimir" },
-  { icon: Users, text: "Crianças de 4 a 12 anos" },
-  { icon: Zap, text: "Acesso imediato" },
-  { icon: Check, text: "Uso em casa ou na igreja" },
+  { icon: Check, text: "Pagamento único" },
+  { icon: Download, text: "Acesso imediato" },
+  { icon: ShieldCheck, text: "Garantia de 7 dias" },
+  { icon: Users, text: "Compra 100% Segura" },
 ];
 
 export const HeroSection = () => {
@@ -16,52 +19,79 @@ export const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen gradient-hero overflow-hidden">
-      {/* Decorative elements */}
+    <section className="relative min-h-screen overflow-hidden">
+      {/* Background with gradient */}
+      <div className="absolute inset-0 gradient-hero" />
+      
+      {/* Animated glow orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+        <FloatingElement delay={0} duration={8} y={30}>
+          <div className="absolute top-20 left-[10%] w-[500px] h-[500px] bg-gradient-radial from-primary/10 via-primary/5 to-transparent rounded-full blur-3xl" />
+        </FloatingElement>
+        <FloatingElement delay={2} duration={10} y={40}>
+          <div className="absolute bottom-10 right-[5%] w-[600px] h-[600px] bg-gradient-radial from-gold-400/10 via-gold-400/5 to-transparent rounded-full blur-3xl" />
+        </FloatingElement>
+        <FloatingElement delay={4} duration={12} y={20}>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-accent/5 to-transparent rounded-full blur-3xl" />
+        </FloatingElement>
       </div>
 
-      <div className="container relative z-10 pt-12 pb-16 md:pt-20 md:pb-24">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+      <div className="container relative z-10 pt-16 pb-20 md:pt-24 md:pb-32">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           {/* Content */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="flex-1 text-center lg:text-left"
           >
-            <motion.span
-              initial={{ opacity: 0, scale: 0.9 }}
+            {/* Logo/Brand Badge */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2, duration: 0.5 }}
-              className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary font-medium text-sm mb-6"
+              className="mb-8"
             >
-              ✨ Kit Premium Digital
-            </motion.span>
+              <span className="inline-block text-xs tracking-[0.3em] uppercase text-muted-foreground font-medium mb-2">
+                Kit Premium Digital
+              </span>
+              <h2 className="font-display text-2xl md:text-3xl font-bold">
+                <span className="text-gradient">Jogos de Luz</span>
+              </h2>
+            </motion.div>
 
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
-              Ensinar valores cristãos pode ser{" "}
-              <span className="text-gradient">leve, divertido</span> e inesquecível.
-            </h1>
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+              className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-[1.1] mb-6 text-balance"
+            >
+              Transforme o estudo da Bíblia em momentos{" "}
+              <span className="text-gradient">inesquecíveis de alegria!</span>
+            </motion.h1>
 
-            <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed">
-              Um kit completo de jogos, atividades e desenhos bíblicos prontos para usar,
-              que ajudam sua família a se conectar com Deus — sem telas, sem estresse.
-            </p>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed"
+            >
+              Com o kit de atividades para impressão, suas crianças aprendem valores cristãos enquanto se divertem! E você ganha mais tempo em família.
+            </motion.p>
 
+            {/* CTA Button */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.5 }}
+              transition={{ delay: 0.5, duration: 0.6 }}
+              className="mb-8"
             >
               <Button
                 size="lg"
                 onClick={scrollToPrice}
-                className="gradient-cta shadow-gold text-primary-foreground font-semibold text-lg px-8 py-6 rounded-2xl hover:scale-105 transition-transform duration-300"
+                className="relative gradient-cta shadow-gold text-primary-foreground font-bold text-lg px-10 py-7 rounded-2xl hover:scale-105 transition-all duration-300 shine overflow-hidden group"
               >
-                Quero transformar meus momentos em família
+                <span className="relative z-10">QUERO MEU KIT DE ATIVIDADES!</span>
               </Button>
             </motion.div>
 
@@ -69,42 +99,54 @@ export const HeroSection = () => {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.6, duration: 0.5 }}
-              className="flex flex-wrap justify-center lg:justify-start gap-3 mt-8"
+              transition={{ delay: 0.7, duration: 0.5 }}
+              className="flex flex-wrap justify-center lg:justify-start gap-x-4 gap-y-2"
             >
               {proofChips.map((chip, index) => (
                 <motion.div
                   key={chip.text}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.7 + index * 0.1, duration: 0.4 }}
-                  className="flex items-center gap-2 px-4 py-2 rounded-full bg-card shadow-soft border border-border/50"
+                  transition={{ delay: 0.8 + index * 0.1, duration: 0.4 }}
+                  className="flex items-center gap-2 text-muted-foreground"
                 >
                   <chip.icon className="w-4 h-4 text-primary" />
-                  <span className="text-sm font-medium text-foreground">{chip.text}</span>
+                  <span className="text-sm">{chip.text}</span>
+                  {index < proofChips.length - 1 && (
+                    <span className="text-border ml-2">•</span>
+                  )}
                 </motion.div>
               ))}
             </motion.div>
           </motion.div>
 
-          {/* Hero Image */}
+          {/* Hero Image with 3D Effect */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.3, duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-            className="flex-1 w-full max-w-2xl"
+            initial={{ opacity: 0, scale: 0.8, rotateY: 20 }}
+            animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+            transition={{ delay: 0.4, duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            className="flex-1 w-full max-w-xl lg:max-w-2xl"
           >
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-3xl blur-2xl transform scale-95" />
-              <img
-                src={heroMockup}
-                alt="Kit Premium Jogos de Luz - Material cristão para crianças"
-                className="relative w-full rounded-3xl shadow-elevated animate-float"
-              />
-            </div>
+            {/* Rating above image */}
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 0.5 }}
+              className="flex justify-center mb-6"
+            >
+              <RatingStars rating={4.96} reviews={2464} />
+            </motion.div>
+
+            <Product3DMockup
+              image={heroMockup}
+              alt="Kit Premium Jogos de Luz - Material cristão para crianças"
+            />
           </motion.div>
         </div>
       </div>
+
+      {/* Bottom gradient fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
     </section>
   );
 };
