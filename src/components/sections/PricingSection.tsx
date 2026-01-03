@@ -1,9 +1,18 @@
 import { ScrollReveal, TiltCard, FloatingElement } from "@/components/ui/scroll-reveal";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Shield, Download, Sparkles, Star } from "lucide-react";
+import { Shield, Download, Sparkles, Star, Check } from "lucide-react";
 import { useRef } from "react";
 import bannerCheckout from "@/assets/banner-checkout.png";
+
+const benefits = [
+  "Kit cristão completo para crianças de 4 a 12 anos",
+  "+20 jogos bíblicos para aprendizado divertido",
+  "+600 atividades bíblicas prontas para imprimir",
+  "+75 desenhos bíblicos para colorir",
+  "Bíblia ilustrada + devocional infantil inclusos",
+  "Material prático para casa, igreja ou ministério",
+];
 
 export const PricingSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -89,6 +98,25 @@ export const PricingSection = () => {
                       {/* Overlay glow */}
                       <div className="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-transparent pointer-events-none" />
                     </motion.div>
+
+                    {/* Benefits list */}
+                    <div className="space-y-2.5 mb-6">
+                      {benefits.map((benefit, index) => (
+                        <motion.div
+                          key={benefit}
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: 0.4 + index * 0.05 }}
+                          className="flex items-start gap-3 p-3 rounded-xl bg-secondary/50 border border-primary/10"
+                        >
+                          <div className="w-5 h-5 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <Check className="w-3 h-3 text-primary-foreground" />
+                          </div>
+                          <span className="text-foreground text-sm">{benefit}</span>
+                        </motion.div>
+                      ))}
+                    </div>
 
                     {/* Price box with premium styling */}
                     <motion.div 
