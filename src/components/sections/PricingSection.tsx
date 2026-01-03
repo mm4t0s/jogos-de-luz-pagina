@@ -167,6 +167,7 @@ export const PricingSection = () => {
                           src={bannerCheckout}
                           alt="Kit Premium Jogos de Luz - Ensinar a Bíblia pode ser leve, divertido e inesquecível"
                           className="w-full h-auto"
+                          loading="lazy"
                         />
                         {/* Overlay glow */}
                         <div className="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-transparent pointer-events-none" />
