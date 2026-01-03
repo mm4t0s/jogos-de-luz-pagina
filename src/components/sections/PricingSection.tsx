@@ -263,14 +263,17 @@ export const PricingSection = () => {
                       
                       <Button
                         size="lg"
+                        asChild
                         className="relative w-full gradient-cta shadow-gold text-primary-foreground font-bold text-base md:text-lg py-7 md:py-8 rounded-2xl hover:scale-[1.02] transition-all duration-300 text-center whitespace-normal leading-tight group overflow-hidden"
                       >
-                        {/* Shine sweep on hover */}
-                        <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                        <span className="relative flex items-center justify-center gap-2">
-                          <Download className="w-5 h-5" />
-                          Quero meu Kit Completo agora
-                        </span>
+                        <a href="https://pay.cakto.com.br/3bnyiqi_657025" target="_blank" rel="noopener noreferrer">
+                          {/* Shine sweep on hover */}
+                          <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                          <span className="relative flex items-center justify-center gap-2">
+                            <Download className="w-5 h-5" />
+                            Quero meu Kit Completo agora
+                          </span>
+                        </a>
                       </Button>
                     </motion.div>
 
