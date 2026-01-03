@@ -16,6 +16,13 @@ import gameLivroBiblia from "@/assets/games/que-livro-da-biblia.png";
 import gameUno from "@/assets/games/uno-cristao.png";
 import gameMico from "@/assets/games/mico-biblico.png";
 
+// Activity images
+import aprendendo from "@/assets/activities/aprendendo-a-orar.png";
+import antigoTestamento from "@/assets/activities/antigo-testamento.png";
+import passatempos from "@/assets/activities/passatempos-biblicos.png";
+import alfabeto from "@/assets/activities/alfabeto-biblico.png";
+import aventuras from "@/assets/activities/aventuras-biblicas.png";
+
 const gamesImages = [
   { src: game3Pistas, alt: "Jogo das 3 Pistas Bíblicas" },
   { src: gameMemoria, alt: "Jogo da Memória Bíblico" },
@@ -23,6 +30,14 @@ const gamesImages = [
   { src: gameLivroBiblia, alt: "Que Livro da Bíblia é Este?" },
   { src: gameUno, alt: "UNO Cristão Gerações" },
   { src: gameMico, alt: "Jogo do Mico Bíblico" },
+];
+
+const activitiesImages = [
+  { src: aprendendo, alt: "Aprendendo a Orar" },
+  { src: antigoTestamento, alt: "Antigo Testamento" },
+  { src: passatempos, alt: "Passatempos Bíblicos" },
+  { src: alfabeto, alt: "Alfabeto Bíblico" },
+  { src: aventuras, alt: "Aventuras Bíblicas" },
 ];
 
 const Index = () => {
@@ -45,8 +60,7 @@ const Index = () => {
         title="+ de 600 Atividades Cristãs"
         subtitle="As imagens abaixo representam apenas uma pequena parte do material disponível no acesso completo ao Kit Premium Jogos de Luz."
         accentColor="gold"
-        placeholderCount={6}
-        placeholderLabels={["Atividade 1", "Atividade 2", "Atividade 3", "Atividade 4", "Atividade 5", "Atividade 6"]}
+        images={activitiesImages}
       />
       
       <ProductCarouselSection
