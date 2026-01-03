@@ -11,10 +11,9 @@ const proofChips = [
   { icon: Users, text: "Compra 100% Segura" },
 ];
 
+const CHECKOUT_URL = "https://pay.cakto.com.br/3bnyiqi_657025";
+
 export const HeroSection = () => {
-  const scrollToPrice = () => {
-    document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" });
-  };
 
   return (
     <section className="relative min-h-screen overflow-hidden flex items-center pt-16 pb-12 md:pt-8 md:py-0">
@@ -120,10 +119,12 @@ export const HeroSection = () => {
           >
             <Button
               size="lg"
-              onClick={scrollToPrice}
+              asChild
               className="gradient-cta shadow-gold text-primary-foreground font-bold text-base md:text-lg px-6 md:px-10 py-7 rounded-2xl hover:scale-105 transition-all duration-300 w-full md:w-auto text-center whitespace-normal leading-tight"
             >
-              Quero ensinar valores cristãos com material pronto →
+              <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer">
+                Quero ensinar valores cristãos com material pronto →
+              </a>
             </Button>
 
             <div className="grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-2 sm:gap-4 text-xs sm:text-sm text-muted-foreground px-4 sm:px-0">
