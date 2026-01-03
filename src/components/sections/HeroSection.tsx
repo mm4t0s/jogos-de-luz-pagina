@@ -119,12 +119,12 @@ export const HeroSection = () => {
           >
             <Button
               size="lg"
-              asChild
+              onClick={() => {
+                document.getElementById('pricing-section')?.scrollIntoView({ behavior: 'smooth' });
+              }}
               className="gradient-cta shadow-gold text-primary-foreground font-bold text-base md:text-lg px-6 md:px-10 py-7 rounded-2xl hover:scale-105 transition-all duration-300 w-full md:w-auto text-center whitespace-normal leading-tight"
             >
-              <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer">
-                Quero ensinar valores cristãos com material pronto →
-              </a>
+              Quero ensinar valores cristãos com material pronto →
             </Button>
 
             <div className="grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-2 sm:gap-4 text-xs sm:text-sm text-muted-foreground px-4 sm:px-0">
