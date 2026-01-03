@@ -121,7 +121,7 @@ export const HeroSection = () => {
             <Button
               size="lg"
               onClick={scrollToPrice}
-              className="gradient-cta shadow-gold text-primary-foreground font-bold text-lg px-10 py-7 rounded-2xl hover:scale-105 transition-all duration-300"
+              className="gradient-cta shadow-gold text-primary-foreground font-bold text-base md:text-lg px-6 md:px-10 py-7 rounded-2xl hover:scale-105 transition-all duration-300 w-full md:w-auto text-center whitespace-normal leading-tight"
             >
               Quero ensinar valores cristãos com material pronto →
             </Button>

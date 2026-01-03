@@ -87,7 +87,7 @@ export const PricingSection = () => {
                   {/* CTA Button */}
                   <Button
                     size="lg"
-                    className="w-full gradient-cta shadow-gold text-primary-foreground font-bold text-lg py-7 rounded-2xl hover:scale-[1.02] transition-all duration-300"
+                    className="w-full gradient-cta shadow-gold text-primary-foreground font-bold text-base md:text-lg py-7 rounded-2xl hover:scale-[1.02] transition-all duration-300 text-center whitespace-normal leading-tight"
                   >
                     Quero ensinar valores cristãos com material pronto
                   </Button>
