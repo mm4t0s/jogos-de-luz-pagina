@@ -74,32 +74,35 @@ export const ProductCarouselSection = ({
               <CarouselContent className="-ml-2 sm:-ml-4">
                 {hasImages ? (
                   // Render real images
-                  images.map((image, index) => (
-                    <CarouselItem 
-                      key={index} 
-                      className={`pl-2 sm:pl-4 ${
-                        layout === "horizontal" 
-                          ? "basis-[90%] sm:basis-[70%] lg:basis-1/2" 
-                          : "basis-[85%] sm:basis-1/2 lg:basis-1/3"
-                      }`}
-                    >
-                      <motion.div
-                        whileHover={{ y: -5, scale: 1.02 }}
-                        transition={{ duration: 0.2 }}
-                        className="h-full"
+                  images.map((image, index) => {
+                    // For "horizontal" layout, first image stays vertical, rest are horizontal
+                    const isHorizontalItem = layout === "horizontal" && index > 0;
+                    
+                    return (
+                      <CarouselItem 
+                        key={index} 
+                        className={`pl-2 sm:pl-4 ${
+                          isHorizontalItem 
+                            ? "basis-[90%] sm:basis-[70%] lg:basis-1/2" 
+                            : "basis-[85%] sm:basis-1/2 lg:basis-1/3"
+                        }`}
                       >
-                        <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-elevated group cursor-pointer transition-all duration-300 hover:shadow-3d bg-card">
-                          <img
-                            src={image.src}
-                            alt={image.alt}
-                            className={`w-full h-auto object-cover ${
-                              layout === "horizontal" ? "aspect-video" : ""
-                            }`}
-                          />
-                        </div>
-                      </motion.div>
-                    </CarouselItem>
-                  ))
+                        <motion.div
+                          whileHover={{ y: -5, scale: 1.02 }}
+                          transition={{ duration: 0.2 }}
+                          className="h-full"
+                        >
+                          <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-elevated group cursor-pointer transition-all duration-300 hover:shadow-3d bg-card">
+                            <img
+                              src={image.src}
+                              alt={image.alt}
+                              className="w-full h-auto object-cover"
+                            />
+                          </div>
+                        </motion.div>
+                      </CarouselItem>
+                    );
+                  })
                 ) : (
                   // Render placeholders
                   Array.from({ length: placeholderCount }).map((_, index) => (
