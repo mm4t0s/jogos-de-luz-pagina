@@ -49,7 +49,7 @@ export const PricingSection = () => {
                       Kit Premium Jogos de Luz
                     </h2>
                     <p className="text-muted-foreground mt-2">
-                      Um caminho simples para ensinar valores cristãos em casa, de forma leve e sem telas.
+                      Acesso completo a todo o material, sem mensalidade e sem limitações.
                     </p>
                   </div>
 
@@ -89,7 +89,7 @@ export const PricingSection = () => {
                     size="lg"
                     className="w-full gradient-cta shadow-gold text-primary-foreground font-bold text-lg py-7 rounded-2xl hover:scale-[1.02] transition-all duration-300"
                   >
-                    Quero ensinar valores cristãos em casa
+                    Quero ensinar valores cristãos com material pronto
                   </Button>
 
                   {/* Trust badges */}

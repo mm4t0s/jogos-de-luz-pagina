@@ -2,8 +2,10 @@ import { HeroSection } from "@/components/sections/HeroSection";
 import { TransformationSection } from "@/components/sections/TransformationSection";
 import { ProductCarouselSection } from "@/components/sections/ProductCarouselSection";
 import { ContentSummarySection } from "@/components/sections/ContentSummarySection";
+import { MinistrySection } from "@/components/sections/MinistrySection";
 import { PricingSection } from "@/components/sections/PricingSection";
 import { GuaranteeSection } from "@/components/sections/GuaranteeSection";
+import { ClosingSection } from "@/components/sections/ClosingSection";
 import { Footer } from "@/components/sections/Footer";
 
 const Index = () => {
@@ -67,11 +69,17 @@ const Index = () => {
         ]}
       />
 
+      {/* Ministry Section */}
+      <MinistrySection />
+
       {/* Pricing */}
       <PricingSection />
 
       {/* Guarantee */}
       <GuaranteeSection />
+
+      {/* Closing */}
+      <ClosingSection />
 
       {/* Footer */}
       <Footer />

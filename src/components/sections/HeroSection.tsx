@@ -50,7 +50,7 @@ export const HeroSection = () => {
               Kit Jogos de Luz
             </h1>
             <p className="text-xl md:text-2xl font-semibold text-foreground mt-2">
-              O Método Completo Para Famílias Cristãs
+              O Método Completo para Ensinar Valores Cristãos às Crianças
             </p>
           </motion.div>
 
@@ -59,11 +59,11 @@ export const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="text-center text-lg text-muted-foreground max-w-2xl mx-auto mb-8"
+            className="text-center text-lg text-muted-foreground max-w-3xl mx-auto mb-8"
           >
-            Imagine ter em mãos <strong className="text-foreground">mais de 20 jogos prontos</strong> para transformar qualquer momento em uma oportunidade de{" "}
-            <span className="text-primary font-semibold">conexão familiar</span> e{" "}
-            <span className="text-primary font-semibold">ensino da Palavra</span> — sem complicação, sem telas, sem estresse.
+            Um kit completo com <strong className="text-foreground">jogos bíblicos</strong>,{" "}
+            <strong className="text-foreground">atividades cristãs prontas</strong> e{" "}
+            <strong className="text-foreground">desenhos para colorir</strong>, criado para facilitar o ensino da Palavra em casa, na igreja e no ministério infantil — sem telas, sem improviso e sem estresse.
           </motion.p>
 
           {/* Hero Image */}
@@ -98,7 +98,7 @@ export const HeroSection = () => {
             className="flex flex-wrap justify-center gap-3 md:gap-6 mb-10 mt-12"
           >
             {[
-              { icon: "🕐", label: "10-20 min", sub: "por partida" },
+              { icon: "🕐", label: "10-20 min", sub: "por atividade" },
               { icon: "🖨️", label: "PDF Pronto", sub: "só imprimir" },
               { icon: "👨‍👩‍👧", label: "4-12 anos", sub: "toda família" },
               { icon: "⚡", label: "Acesso", sub: "imediato" },
@@ -123,7 +123,7 @@ export const HeroSection = () => {
               onClick={scrollToPrice}
               className="gradient-cta shadow-gold text-primary-foreground font-bold text-lg px-10 py-7 rounded-2xl hover:scale-105 transition-all duration-300"
             >
-              Ver oferta especial →
+              Quero ensinar valores cristãos com material pronto →
             </Button>
 
             <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
@@ -135,6 +135,16 @@ export const HeroSection = () => {
               ))}
             </div>
           </motion.div>
+
+          {/* Authority micro block */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8, duration: 0.5 }}
+            className="text-center text-sm text-muted-foreground mt-10"
+          >
+            Desenvolvido para pais cristãos, líderes de ministério infantil, EBD e igrejas.
+          </motion.p>
         </div>
       </div>
     </section>

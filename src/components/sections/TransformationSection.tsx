@@ -4,16 +4,16 @@ import { ArrowRight } from "lucide-react";
 
 const transformations = [
   {
-    before: "Celulares na mão, cada um no seu canto",
-    after: "Risadas e competição saudável em família",
+    before: "Planejamento cansativo e improvisado",
+    after: "Aulas prontas e organizadas",
   },
   {
-    before: "Crianças entediadas na escola dominical",
-    after: "Participação ativa e versículos memorizados",
+    before: "Crianças dispersas e desinteressadas",
+    after: "Crianças participativas e engajadas",
   },
   {
-    before: "Finais de semana sem propósito",
-    after: "Momentos de conexão que viram tradição",
+    before: "Ensino bíblico repetitivo e monótono",
+    after: "Ensino bíblico leve e divertido",
   },
 ];
 

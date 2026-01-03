@@ -19,8 +19,8 @@ export const GuaranteeSection = () => {
 
                 <div className="space-y-3 text-gray-300 text-sm md:text-base">
                   <p>
-                    Se por qualquer motivo você não ficar satisfeito, devolvemos{" "}
-                    <strong className="text-white">100% do seu investimento</strong>.
+                    Se por qualquer motivo o material não atender às suas expectativas, devolvemos{" "}
+                    <strong className="text-white">100% do seu investimento</strong>, sem perguntas.
                   </p>
                   <p className="flex items-start gap-2">
                     <span>🤝</span>
