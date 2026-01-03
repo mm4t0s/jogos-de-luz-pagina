@@ -1,15 +1,13 @@
 import { motion } from "framer-motion";
-import { Check, Download, Users, Zap, ShieldCheck } from "lucide-react";
+import { Check, Download, Shield, Users, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { RatingStars } from "@/components/ui/rating-stars";
-import { Product3DMockup } from "@/components/ui/product-3d-mockup";
-import { FloatingElement } from "@/components/ui/scroll-reveal";
 import heroMockup from "@/assets/hero-mockup.jpg";
 
 const proofChips = [
   { icon: Check, text: "Pagamento único" },
   { icon: Download, text: "Acesso imediato" },
-  { icon: ShieldCheck, text: "Garantia de 7 dias" },
+  { icon: Shield, text: "Garantia de 7 dias" },
   { icon: Users, text: "Compra 100% Segura" },
 ];
 
@@ -19,134 +17,126 @@ export const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen overflow-hidden">
+    <section className="relative min-h-[90vh] overflow-hidden flex items-center">
       {/* Background with gradient */}
       <div className="absolute inset-0 gradient-hero" />
       
-      {/* Animated glow orbs */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <FloatingElement delay={0} duration={8} y={30}>
-          <div className="absolute top-20 left-[10%] w-[500px] h-[500px] bg-gradient-radial from-primary/10 via-primary/5 to-transparent rounded-full blur-3xl" />
-        </FloatingElement>
-        <FloatingElement delay={2} duration={10} y={40}>
-          <div className="absolute bottom-10 right-[5%] w-[600px] h-[600px] bg-gradient-radial from-gold-400/10 via-gold-400/5 to-transparent rounded-full blur-3xl" />
-        </FloatingElement>
-        <FloatingElement delay={4} duration={12} y={20}>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-accent/5 to-transparent rounded-full blur-3xl" />
-        </FloatingElement>
-      </div>
+      {/* Subtle glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-primary/10 to-transparent rounded-full blur-3xl" />
 
-      <div className="container relative z-10 pt-16 pb-20 md:pt-24 md:pb-32">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-          {/* Content */}
+      <div className="container relative z-10 py-12">
+        <div className="max-w-5xl mx-auto">
+          {/* Badge */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="flex-1 text-center lg:text-left"
+            transition={{ duration: 0.5 }}
+            className="flex justify-center mb-6"
           >
-            {/* Logo/Brand Badge */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-              className="mb-8"
-            >
-              <span className="inline-block text-xs tracking-[0.3em] uppercase text-muted-foreground font-medium mb-2">
-                Kit Premium Digital
-              </span>
-              <h2 className="font-display text-2xl md:text-3xl font-bold">
-                <span className="text-gradient">Jogos de Luz</span>
-              </h2>
-            </motion.div>
-
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-              className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-[1.1] mb-6 text-balance"
-            >
-              Transforme o estudo da Bíblia em momentos{" "}
-              <span className="text-gradient">inesquecíveis de alegria!</span>
-            </motion.h1>
-
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
-              className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed"
-            >
-              Com o kit de atividades para impressão, suas crianças aprendem valores cristãos enquanto se divertem! E você ganha mais tempo em família.
-            </motion.p>
-
-            {/* CTA Button */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.6 }}
-              className="mb-8"
-            >
-              <Button
-                size="lg"
-                onClick={scrollToPrice}
-                className="relative gradient-cta shadow-gold text-primary-foreground font-bold text-lg px-10 py-7 rounded-2xl hover:scale-105 transition-all duration-300 shine overflow-hidden group"
-              >
-                <span className="relative z-10">QUERO MEU KIT DE ATIVIDADES!</span>
-              </Button>
-            </motion.div>
-
-            {/* Proof chips */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.7, duration: 0.5 }}
-              className="flex flex-wrap justify-center lg:justify-start gap-x-4 gap-y-2"
-            >
-              {proofChips.map((chip, index) => (
-                <motion.div
-                  key={chip.text}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.8 + index * 0.1, duration: 0.4 }}
-                  className="flex items-center gap-2 text-muted-foreground"
-                >
-                  <chip.icon className="w-4 h-4 text-primary" />
-                  <span className="text-sm">{chip.text}</span>
-                  {index < proofChips.length - 1 && (
-                    <span className="text-border ml-2">•</span>
-                  )}
-                </motion.div>
-              ))}
-            </motion.div>
+            <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full gradient-cta text-primary-foreground text-sm font-bold shadow-gold">
+              <Sparkles className="w-4 h-4" />
+              Apresentamos
+            </span>
           </motion.div>
 
-          {/* Hero Image with 3D Effect */}
+          {/* Title */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8, rotateY: 20 }}
-            animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-            transition={{ delay: 0.4, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="flex-1 w-full max-w-xl lg:max-w-2xl"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1, duration: 0.6 }}
+            className="text-center mb-6"
           >
-            {/* Rating above image */}
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.5 }}
-              className="flex justify-center mb-6"
-            >
-              <RatingStars rating={4.96} reviews={2464} />
-            </motion.div>
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-gradient leading-tight">
+              Kit Jogos de Luz
+            </h1>
+            <p className="text-xl md:text-2xl font-semibold text-foreground mt-2">
+              O Método Completo Para Famílias Cristãs
+            </p>
+          </motion.div>
 
-            <Product3DMockup
-              image={heroMockup}
-              alt="Kit Premium Jogos de Luz - Material cristão para crianças"
-            />
+          {/* Description */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            className="text-center text-lg text-muted-foreground max-w-2xl mx-auto mb-8"
+          >
+            Imagine ter em mãos <strong className="text-foreground">mais de 20 jogos prontos</strong> para transformar qualquer momento em uma oportunidade de{" "}
+            <span className="text-primary font-semibold">conexão familiar</span> e{" "}
+            <span className="text-primary font-semibold">ensino da Palavra</span> — sem complicação, sem telas, sem estresse.
+          </motion.p>
+
+          {/* Hero Image */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+            className="relative max-w-3xl mx-auto mb-8"
+          >
+            <div className="relative rounded-3xl overflow-hidden shadow-3d">
+              <img
+                src={heroMockup}
+                alt="Kit Premium Jogos de Luz"
+                className="w-full h-auto"
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent pointer-events-none" />
+            </div>
+            
+            {/* Rating below image */}
+            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2">
+              <div className="bg-card rounded-full px-6 py-2 shadow-elevated border border-border/50">
+                <RatingStars rating={4.96} reviews={2464} />
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Feature pills */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.5 }}
+            className="flex flex-wrap justify-center gap-3 md:gap-6 mb-10 mt-12"
+          >
+            {[
+              { icon: "🕐", label: "10-20 min", sub: "por partida" },
+              { icon: "🖨️", label: "PDF Pronto", sub: "só imprimir" },
+              { icon: "👨‍👩‍👧", label: "4-12 anos", sub: "toda família" },
+              { icon: "⚡", label: "Acesso", sub: "imediato" },
+            ].map((item) => (
+              <div key={item.label} className="flex flex-col items-center px-4 py-3 rounded-2xl bg-card/80 border border-border/50 min-w-[100px]">
+                <span className="text-2xl mb-1">{item.icon}</span>
+                <span className="font-bold text-foreground text-sm">{item.label}</span>
+                <span className="text-muted-foreground text-xs">{item.sub}</span>
+              </div>
+            ))}
+          </motion.div>
+
+          {/* CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.5 }}
+            className="flex flex-col items-center gap-4"
+          >
+            <Button
+              size="lg"
+              onClick={scrollToPrice}
+              className="gradient-cta shadow-gold text-primary-foreground font-bold text-lg px-10 py-7 rounded-2xl hover:scale-105 transition-all duration-300"
+            >
+              Ver oferta especial →
+            </Button>
+
+            <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
+              {proofChips.map((chip) => (
+                <div key={chip.text} className="flex items-center gap-1.5">
+                  <chip.icon className="w-4 h-4 text-primary" />
+                  <span>{chip.text}</span>
+                </div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </div>
-
-      {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
     </section>
   );
 };
