@@ -21,6 +21,8 @@ interface ProductCarouselSectionProps {
   accentColor?: "primary" | "gold" | "accent";
   // Real images to display
   images?: ProductImage[];
+  // Layout orientation
+  layout?: "vertical" | "horizontal";
   // Placeholder fallback
   placeholderCount?: number;
   placeholderLabels?: string[];
@@ -32,6 +34,7 @@ export const ProductCarouselSection = ({
   subtitle,
   accentColor = "primary",
   images,
+  layout = "vertical",
   placeholderCount = 5,
   placeholderLabels,
 }: ProductCarouselSectionProps) => {
@@ -72,17 +75,26 @@ export const ProductCarouselSection = ({
                 {hasImages ? (
                   // Render real images
                   images.map((image, index) => (
-                    <CarouselItem key={index} className="pl-2 sm:pl-4 basis-[85%] sm:basis-1/2 lg:basis-1/3">
+                    <CarouselItem 
+                      key={index} 
+                      className={`pl-2 sm:pl-4 ${
+                        layout === "horizontal" 
+                          ? "basis-[90%] sm:basis-[70%] lg:basis-1/2" 
+                          : "basis-[85%] sm:basis-1/2 lg:basis-1/3"
+                      }`}
+                    >
                       <motion.div
                         whileHover={{ y: -5, scale: 1.02 }}
                         transition={{ duration: 0.2 }}
                         className="h-full"
                       >
-                        <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-elevated group cursor-pointer transition-all duration-300 hover:shadow-3d">
+                        <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-elevated group cursor-pointer transition-all duration-300 hover:shadow-3d bg-card">
                           <img
                             src={image.src}
                             alt={image.alt}
-                            className="w-full h-auto object-cover"
+                            className={`w-full h-auto object-cover ${
+                              layout === "horizontal" ? "aspect-video" : ""
+                            }`}
                           />
                         </div>
                       </motion.div>
