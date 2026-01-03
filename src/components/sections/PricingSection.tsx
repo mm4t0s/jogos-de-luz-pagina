@@ -26,7 +26,7 @@ export const PricingSection = () => {
         </p>
       </div>
 
-      <div className="container relative z-10">
+      <div className="container relative z-10 px-4 md:px-6">
         <ScrollReveal>
           <div className="max-w-xl mx-auto">
             <GlowingBorder>
@@ -93,17 +93,17 @@ export const PricingSection = () => {
                   </Button>
 
                   {/* Trust badges */}
-                  <div className="flex items-center justify-center gap-4 md:gap-6 mt-6 text-xs md:text-sm text-muted-foreground">
-                    <div className="flex items-center gap-1.5">
-                      <Shield className="w-4 h-4 text-primary" />
+                  <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-6 mt-6 text-[10px] sm:text-xs md:text-sm text-muted-foreground">
+                    <div className="flex items-center gap-1">
+                      <Shield className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary flex-shrink-0" />
                       <span>Garantia de 7 dias</span>
                     </div>
-                    <div className="flex items-center gap-1.5">
-                      <Check className="w-4 h-4 text-primary" />
+                    <div className="flex items-center gap-1">
+                      <Check className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary flex-shrink-0" />
                       <span>Compra 100% segura</span>
                     </div>
-                    <div className="flex items-center gap-1.5">
-                      <Download className="w-4 h-4 text-primary" />
+                    <div className="flex items-center gap-1">
+                      <Download className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary flex-shrink-0" />
                       <span>Acesso imediato</span>
                     </div>
                   </div>

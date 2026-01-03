@@ -2,11 +2,11 @@ import { Heart } from "lucide-react";
 
 export const Footer = () => {
   return (
-    <footer className="py-10 gradient-dark relative overflow-hidden">
-      <div className="container">
-        <div className="flex flex-col items-center gap-6 text-sm text-gray-400">
+    <footer className="py-8 md:py-10 gradient-dark relative overflow-hidden">
+      <div className="container px-4 md:px-6">
+        <div className="flex flex-col items-center gap-4 md:gap-6 text-xs sm:text-sm text-gray-400">
           {/* Legal Links */}
-          <div className="flex flex-wrap items-center justify-center gap-4 uppercase tracking-wider">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 uppercase tracking-wider text-[10px] sm:text-xs">
             <a href="#" className="hover:text-white transition-colors">
               Termos de Uso
             </a>
