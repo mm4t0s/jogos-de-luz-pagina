@@ -110,6 +110,7 @@ export const ProductCarouselSection = ({
                                   key={imgIndex}
                                   src={img.src}
                                   alt={img.alt}
+                                  loading="lazy"
                                   className="w-full h-auto object-cover"
                                 />
                               ))}
@@ -120,6 +121,7 @@ export const ProductCarouselSection = ({
                               <img
                                 src={(isSingle || isSimple) ? (item as ProductImage | SingleImage).src : ""}
                                 alt={(isSingle || isSimple) ? (item as ProductImage | SingleImage).alt : ""}
+                                loading="lazy"
                                 className="w-full h-auto object-cover"
                               />
                             </div>
