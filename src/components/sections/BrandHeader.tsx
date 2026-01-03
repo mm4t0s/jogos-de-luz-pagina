@@ -9,7 +9,7 @@ export const BrandHeader = () => {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="flex items-center gap-1.5"
+          className="flex items-center justify-center md:justify-start gap-1.5"
         >
           <Sparkles className="w-4 h-4 text-primary" />
           <span className="text-sm font-semibold text-foreground/80 tracking-wide">

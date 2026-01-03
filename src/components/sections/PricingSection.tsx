@@ -56,7 +56,7 @@ export const PricingSection = () => {
   return (
     <section 
       ref={sectionRef}
-      id="pricing" 
+      id="pricing-section" 
       className="py-16 md:py-24 relative overflow-hidden"
     >
       {/* Animated background */}
