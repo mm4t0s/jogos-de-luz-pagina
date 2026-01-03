@@ -13,10 +13,10 @@ export const ContentSummarySection = () => {
     <section className="py-12 md:py-16 relative overflow-hidden">
       <div className="absolute inset-0 bg-card" />
 
-      <div className="container relative z-10">
+      <div className="container relative z-10 px-4 md:px-6">
         <ScrollReveal>
           <div className="max-w-2xl mx-auto">
-            <div className="p-6 md:p-8 rounded-3xl bg-secondary/50 border border-border/50">
+            <div className="p-5 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl bg-secondary/50 border border-border/50">
               <h3 className="font-display text-xl md:text-2xl font-bold text-foreground mb-6">
                 No Kit Premium Jogos de Luz você recebe:
               </h3>
