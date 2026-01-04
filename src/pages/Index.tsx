@@ -1,6 +1,8 @@
 import { BrandHeader } from "@/components/sections/BrandHeader";
 import { HeroSection } from "@/components/sections/HeroSection";
+import { VideoSection } from "@/components/sections/VideoSection";
 import { ContentSummarySection } from "@/components/sections/ContentSummarySection";
+import { SimplePricingBlock } from "@/components/sections/SimplePricingBlock";
 import { ProductCarouselSection } from "@/components/sections/ProductCarouselSection";
 import { MinistrySection } from "@/components/sections/MinistrySection";
 import { PricingSection } from "@/components/sections/PricingSection";
@@ -80,10 +82,18 @@ const Index = () => {
       <BrandHeader />
       <HeroSection />
       
-      {/* Summary FIRST after hero */}
+      {/* Video right after hero */}
+      <div id="video-section">
+        <VideoSection />
+      </div>
+      
+      {/* What you receive - immediately after video */}
       <ContentSummarySection />
       
-      {/* Product Carousels */}
+      {/* Simple price block - immediately after summary */}
+      <SimplePricingBlock />
+      
+      {/* Product Carousels with CTAs */}
       <ProductCarouselSection
         id="jogos"
         title="+ de 20 Jogos Bíblicos"
