@@ -1,8 +1,7 @@
 import { BrandHeader } from "@/components/sections/BrandHeader";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { TransformationSection } from "@/components/sections/TransformationSection";
-import { ProductCarouselSection } from "@/components/sections/ProductCarouselSection";
 import { ContentSummarySection } from "@/components/sections/ContentSummarySection";
+import { ProductCarouselSection } from "@/components/sections/ProductCarouselSection";
 import { MinistrySection } from "@/components/sections/MinistrySection";
 import { PricingSection } from "@/components/sections/PricingSection";
 import { GuaranteeSection } from "@/components/sections/GuaranteeSection";
@@ -32,7 +31,6 @@ import promessaAbraao from "@/assets/drawings/promessa-abraao.png";
 import sarcaArdente from "@/assets/drawings/sarca-ardente.png";
 import pragasEgito from "@/assets/drawings/pragas-egito.png";
 import multiplicacaoPaes from "@/assets/drawings/multiplicacao-paes.png";
-// Removed conversaoPaulo - not needed
 
 const gamesImages = [
   { src: game3Pistas, alt: "Jogo das 3 Pistas Bíblicas" },
@@ -43,7 +41,6 @@ const gamesImages = [
   { src: gameMico, alt: "Jogo do Mico Bíblico" },
 ];
 
-// Drawings: first is single cover, then 3 stacked pairs (2 horizontal images per vertical block)
 const drawingsImages = [
   { type: "single" as const, src: desenhosCover, alt: "75 Desenhos Bíblicos para Colorir" },
   { 
@@ -82,13 +79,15 @@ const Index = () => {
     <main className="min-h-screen bg-background relative">
       <BrandHeader />
       <HeroSection />
-      <TransformationSection />
+      
+      {/* Summary FIRST after hero */}
+      <ContentSummarySection />
       
       {/* Product Carousels */}
       <ProductCarouselSection
         id="jogos"
         title="+ de 20 Jogos Bíblicos"
-        subtitle="As imagens abaixo representam apenas uma pequena parte do material disponível no acesso completo ao Kit Premium Jogos de Luz."
+        subtitle="Veja alguns dos jogos prontos para imprimir."
         accentColor="primary"
         images={gamesImages}
       />
@@ -96,7 +95,7 @@ const Index = () => {
       <ProductCarouselSection
         id="atividades"
         title="+ de 600 Atividades Cristãs"
-        subtitle="As imagens abaixo representam apenas uma pequena parte do material disponível no acesso completo ao Kit Premium Jogos de Luz."
+        subtitle="Veja algumas das atividades organizadas por tema."
         accentColor="gold"
         images={activitiesImages}
       />
@@ -104,15 +103,12 @@ const Index = () => {
       <ProductCarouselSection
         id="desenhos"
         title="+ de 75 Desenhos Bíblicos para Colorir"
-        subtitle="As imagens abaixo representam apenas uma pequena parte do material disponível no acesso completo ao Kit Premium Jogos de Luz."
+        subtitle="Veja alguns dos desenhos prontos para colorir."
         accentColor="accent"
         images={drawingsImages}
         layout="stacked"
       />
 
-      {/* Summary Box - after all carousels */}
-      <ContentSummarySection />
-      
       <MinistrySection />
       <PricingSection />
       <GuaranteeSection />
