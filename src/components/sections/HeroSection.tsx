@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Check, Download, Shield, Users, Sparkles } from "lucide-react";
+import { Check, Download, Shield, Users, Sparkles, Play, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { RatingStars } from "@/components/ui/rating-stars";
 import heroMockup from "@/assets/hero-kit-jogos-luz.png";
@@ -16,7 +16,7 @@ const CHECKOUT_URL = "https://pay.cakto.com.br/3bnyiqi_657025";
 export const HeroSection = () => {
 
   return (
-    <section className="relative min-h-screen overflow-hidden flex items-center pt-16 pb-12 md:pt-8 md:py-0">
+    <section className="relative overflow-hidden pt-16 pb-8 md:pt-8 md:pb-12">
       {/* Background with gradient */}
       <div className="absolute inset-0 gradient-hero" />
       
@@ -49,20 +49,20 @@ export const HeroSection = () => {
               Kit Jogos de Luz
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl font-semibold text-foreground mt-2 px-2">
-              O Método Completo para Ensinar Valores Cristãos às Crianças
+              Ensine Valores Cristãos às Crianças de Forma Simples
             </p>
           </motion.div>
 
-          {/* Description */}
+          {/* Description - focused on parents */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="text-center text-base md:text-lg text-muted-foreground max-w-3xl mx-auto mb-6 md:mb-8 px-2"
+            className="text-center text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-6 px-2"
           >
-            Um kit completo com <strong className="text-foreground">jogos bíblicos</strong>,{" "}
-            <strong className="text-foreground">atividades cristãs prontas</strong> e{" "}
-            <strong className="text-foreground">desenhos para colorir</strong>, criado para facilitar o ensino da Palavra em casa, na igreja e no ministério infantil — sem telas, sem improviso e sem estresse.
+            Para <strong className="text-foreground">pais cristãos</strong> que desejam ensinar valores bíblicos em casa.
+            <br />
+            <span className="text-sm">(também ideal para igrejas, EBD e ministério infantil)</span>
           </motion.p>
 
           {/* Hero Image */}
@@ -70,7 +70,7 @@ export const HeroSection = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="relative max-w-3xl mx-auto mb-6 md:mb-8"
+            className="relative max-w-3xl mx-auto mb-6"
           >
             <div className="relative rounded-2xl md:rounded-3xl overflow-hidden shadow-3d">
               <img
@@ -90,12 +90,33 @@ export const HeroSection = () => {
             </div>
           </motion.div>
 
+          {/* Video CTA Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+            className="flex justify-center mt-10 mb-6"
+          >
+            <button
+              onClick={() => {
+                // TODO: Open video modal
+                alert("Vídeo em breve!");
+              }}
+              className="flex items-center gap-3 px-6 py-3 rounded-full bg-card/80 border border-border/50 hover:bg-card hover:border-primary/50 transition-all duration-300 group"
+            >
+              <div className="w-10 h-10 rounded-full gradient-cta flex items-center justify-center shadow-gold group-hover:scale-110 transition-transform">
+                <Play className="w-4 h-4 text-primary-foreground ml-0.5" />
+              </div>
+              <span className="font-semibold text-foreground">Ver como funciona</span>
+            </button>
+          </motion.div>
+
           {/* Feature pills */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.5 }}
-            className="grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-2 sm:gap-3 md:gap-6 mb-8 md:mb-10 mt-10 md:mt-12"
+            className="grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-2 sm:gap-3 md:gap-6 mb-6"
           >
             {[
               { icon: "🕐", label: "10-20 min", sub: "por atividade" },
@@ -125,7 +146,7 @@ export const HeroSection = () => {
               }}
               className="gradient-cta shadow-gold text-primary-foreground font-bold text-base md:text-lg px-6 md:px-10 py-7 rounded-2xl hover:scale-105 transition-all duration-300 w-full md:w-auto text-center whitespace-normal leading-tight"
             >
-              Quero ensinar valores cristãos com material pronto →
+              Quero meu Kit Jogos de Luz →
             </Button>
 
             <div className="grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-2 sm:gap-4 text-xs sm:text-sm text-muted-foreground px-4 sm:px-0">
@@ -138,15 +159,21 @@ export const HeroSection = () => {
             </div>
           </motion.div>
 
-          {/* Authority micro block */}
-          <motion.p
+          {/* Scroll hint - visual cue */}
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.5 }}
-            className="text-center text-sm text-muted-foreground mt-10"
+            className="flex flex-col items-center mt-8 text-muted-foreground"
           >
-            Desenvolvido para pais cristãos, líderes de ministério infantil, EBD e igrejas.
-          </motion.p>
+            <span className="text-sm mb-2">⬇️ Veja tudo o que você recebe no Kit</span>
+            <motion.div
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <ChevronDown className="w-5 h-5" />
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>
