@@ -1,80 +1,85 @@
 import { motion } from "framer-motion";
-import { Play, ShieldCheck, Zap, Clock } from "lucide-react";
+import { Play, ShieldCheck, Zap, Clock, ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const CHECKOUT_URL = "https://pay.cakto.com.br/3bnyiqi_657025";
 
 export const HeroVSLSection = () => {
   return (
-    <section className="relative overflow-hidden pt-16 pb-8 md:pt-8 md:pb-12">
-      {/* Background with gradient */}
-      <div className="absolute inset-0 gradient-hero" />
-      
-      {/* Subtle glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] md:w-[800px] h-[400px] md:h-[800px] bg-gradient-radial from-primary/10 to-transparent rounded-full blur-3xl" />
+    <section className="relative overflow-hidden pt-6 pb-0 md:pt-8">
+      {/* Background - simplified for performance */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-card" />
 
-      <div className="container relative z-10 py-4 md:py-10 px-4 md:px-6">
+      <div className="container relative z-10 py-4 md:py-8 px-4 md:px-6">
         <div className="max-w-2xl mx-auto">
-          {/* Main hook */}
+          {/* Main hook - IMPACTFUL */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-4"
+            transition={{ duration: 0.4 }}
+            className="text-center mb-5"
           >
-            <h1 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-foreground leading-tight px-2">
-              👉 O segredo para ensinar a Bíblia às crianças{" "}
-              <span className="text-gradient">sem briga, sem tela e com interesse real.</span>
+            <h1 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-foreground leading-tight px-2">
+              <span className="text-3xl sm:text-4xl inline-block animate-pulse mr-2">👉</span>
+              O segredo para ensinar a Bíblia às crianças{" "}
+              <span className="text-gradient block sm:inline mt-1 sm:mt-0">sem briga, sem tela e com interesse real.</span>
             </h1>
           </motion.div>
 
-          {/* Video CTA */}
-          <motion.p
+          {/* Video CTA - More prominent */}
+          <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1, duration: 0.5 }}
-            className="text-center text-muted-foreground text-sm md:text-base mb-4"
+            transition={{ delay: 0.1, duration: 0.4 }}
+            className="text-center mb-4"
           >
-            ▶️ Assista ao vídeo e veja como crianças aprendem a Bíblia brincando.
-          </motion.p>
+            <p className="text-foreground font-semibold text-base md:text-lg flex items-center justify-center gap-2">
+              <span className="text-xl">▶️</span>
+              Assista ao vídeo e descubra o método
+            </p>
+          </motion.div>
 
-          {/* Video placeholder - vertical format */}
+          {/* Video placeholder - vertical format with strong visual cue */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            className="relative mx-auto max-w-sm aspect-[9/16] rounded-2xl overflow-hidden bg-secondary/50 border border-border/50 shadow-elevated cursor-pointer group mb-6"
+            transition={{ delay: 0.15, duration: 0.4 }}
+            className="relative mx-auto max-w-sm aspect-[9/16] rounded-2xl overflow-hidden bg-gradient-to-br from-primary/20 to-gold/20 border-2 border-primary/30 shadow-elevated cursor-pointer group mb-5"
             onClick={() => {
-              // TODO: Open video modal or embed
               alert("Vídeo em breve!");
             }}
           >
-            {/* Placeholder for video thumbnail */}
-            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-secondary to-muted">
-              <div className="w-16 h-16 md:w-20 md:h-20 rounded-full gradient-cta flex items-center justify-center shadow-gold group-hover:scale-110 transition-transform duration-300">
-                <Play className="w-6 h-6 md:w-8 md:h-8 text-primary-foreground ml-1" />
+            {/* Video thumbnail placeholder */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="relative">
+                {/* Pulsing ring */}
+                <div className="absolute inset-0 w-20 h-20 md:w-24 md:h-24 rounded-full gradient-cta animate-ping opacity-40" />
+                {/* Play button */}
+                <div className="relative w-20 h-20 md:w-24 md:h-24 rounded-full gradient-cta flex items-center justify-center shadow-gold group-hover:scale-110 transition-transform duration-300">
+                  <Play className="w-8 h-8 md:w-10 md:h-10 text-primary-foreground ml-1" fill="currentColor" />
+                </div>
               </div>
             </div>
             
             {/* Overlay text */}
             <div className="absolute bottom-4 left-0 right-0 text-center">
-              <span className="text-xs md:text-sm text-muted-foreground bg-card/80 px-3 py-1.5 rounded-full">
-                Clique para assistir
+              <span className="text-sm font-semibold text-foreground bg-card/90 px-4 py-2 rounded-full shadow-lg">
+                👆 Clique para assistir
               </span>
             </div>
           </motion.div>
 
           {/* Product info below video */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.5 }}
-            className="text-center mb-6"
+            transition={{ delay: 0.25, duration: 0.4 }}
+            className="text-center mb-5"
           >
             <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-gradient mb-2">
               Kit Jogos de Luz
             </h2>
-            <p className="text-base md:text-lg text-foreground font-medium mb-3">
+            <p className="text-base md:text-lg text-foreground font-medium mb-2">
               Ensine valores cristãos às crianças de forma simples e sem telas
             </p>
             <p className="text-sm md:text-base text-muted-foreground">
@@ -86,12 +91,12 @@ export const HeroVSLSection = () => {
 
           {/* Premium CTA Block with anchoring */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.5 }}
+            transition={{ delay: 0.35, duration: 0.4 }}
             className="relative bg-gradient-to-br from-card via-card to-secondary/30 rounded-3xl p-6 sm:p-8 border border-primary/20 text-center shadow-elevated overflow-hidden"
           >
-            {/* Decorative glow */}
+            {/* Decorative glow - simplified */}
             <div className="absolute -top-20 -right-20 w-40 h-40 bg-primary/10 rounded-full blur-3xl" />
             <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-gold/10 rounded-full blur-3xl" />
             
@@ -141,6 +146,17 @@ export const HeroVSLSection = () => {
                 Garantia 7 dias
               </span>
             </div>
+          </motion.div>
+
+          {/* Scroll hint - visual continuity */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5, duration: 0.4 }}
+            className="flex flex-col items-center mt-6 text-muted-foreground"
+          >
+            <span className="text-xs mb-1">Veja o que está incluso</span>
+            <ArrowDown className="w-4 h-4 animate-bounce" />
           </motion.div>
         </div>
       </div>
