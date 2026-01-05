@@ -63,6 +63,14 @@ export default {
           800: "hsl(22 85% 35%)",
           900: "hsl(20 80% 28%)",
         },
+        kids: {
+          pink: "hsl(340 85% 60%)",
+          purple: "hsl(280 70% 60%)",
+          blue: "hsl(200 90% 55%)",
+          green: "hsl(150 70% 50%)",
+          yellow: "hsl(45 100% 55%)",
+          orange: "hsl(25 95% 55%)",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
