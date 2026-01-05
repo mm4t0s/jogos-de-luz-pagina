@@ -1,13 +1,15 @@
 import { BrandHeader } from "@/components/sections/BrandHeader";
-import { HeroSection } from "@/components/sections/HeroSection";
-import { VideoSection } from "@/components/sections/VideoSection";
+import { HeroVSLSection } from "@/components/sections/HeroVSLSection";
+import { PainPointsSection } from "@/components/sections/PainPointsSection";
 import { ContentSummarySection } from "@/components/sections/ContentSummarySection";
-import { SimplePricingBlock } from "@/components/sections/SimplePricingBlock";
+import { EaseOfUseSection } from "@/components/sections/EaseOfUseSection";
 import { ProductCarouselSection } from "@/components/sections/ProductCarouselSection";
+import { ObjectionsSection } from "@/components/sections/ObjectionsSection";
 import { MinistrySection } from "@/components/sections/MinistrySection";
 import { PricingSection } from "@/components/sections/PricingSection";
+import { FAQSection } from "@/components/sections/FAQSection";
 import { GuaranteeSection } from "@/components/sections/GuaranteeSection";
-import { ClosingSection } from "@/components/sections/ClosingSection";
+import { FinalCTASection } from "@/components/sections/FinalCTASection";
 import { Footer } from "@/components/sections/Footer";
 
 // Game images
@@ -80,18 +82,18 @@ const Index = () => {
   return (
     <main className="min-h-screen bg-background relative">
       <BrandHeader />
-      <HeroSection />
       
-      {/* Video right after hero */}
-      <div id="video-section">
-        <VideoSection />
-      </div>
+      {/* Hero VSL with immediate CTA */}
+      <HeroVSLSection />
       
-      {/* What you receive - immediately after video */}
+      {/* Pain points + solution */}
+      <PainPointsSection />
+      
+      {/* What you receive */}
       <ContentSummarySection />
       
-      {/* Simple price block - immediately after summary */}
-      <SimplePricingBlock />
+      {/* Ease of use block */}
+      <EaseOfUseSection />
       
       {/* Product Carousels with CTAs */}
       <ProductCarouselSection
@@ -119,10 +121,24 @@ const Index = () => {
         layout="stacked"
       />
 
+      {/* Objection handling */}
+      <ObjectionsSection />
+
+      {/* Ministry section */}
       <MinistrySection />
+      
+      {/* Pricing section */}
       <PricingSection />
+      
+      {/* FAQ */}
+      <FAQSection />
+      
+      {/* Guarantee */}
       <GuaranteeSection />
-      <ClosingSection />
+      
+      {/* Final CTA */}
+      <FinalCTASection />
+      
       <Footer />
     </main>
   );
