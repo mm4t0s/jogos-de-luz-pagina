@@ -86,11 +86,11 @@ const Index = () => {
       {/* Hero VSL with immediate CTA */}
       <HeroVSLSection />
       
+      {/* What you receive - immediately after CTA */}
+      <ContentSummarySection />
+      
       {/* Pain points + solution */}
       <PainPointsSection />
-      
-      {/* What you receive */}
-      <ContentSummarySection />
       
       {/* Ease of use block */}
       <EaseOfUseSection />
