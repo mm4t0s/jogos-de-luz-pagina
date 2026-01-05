@@ -11,15 +11,14 @@ const summaryItems = [
 
 export const ContentSummarySection = () => {
   return (
-    <section className="py-8 md:py-12 relative overflow-hidden">
-      <div className="absolute inset-0 bg-card" />
-
+    <section className="pt-4 pb-8 md:pt-6 md:pb-12 relative overflow-hidden bg-card">
       <div className="container relative z-10 px-4 md:px-6">
         <div className="max-w-2xl mx-auto">
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
             className="p-5 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl bg-secondary/50 border border-border/50"
           >
             <div className="flex items-center justify-center gap-2 mb-6">
@@ -33,10 +32,10 @@ export const ContentSummarySection = () => {
               {summaryItems.map((item, index) => (
                 <motion.div
                   key={item}
-                  initial={{ opacity: 0, x: -20 }}
+                  initial={{ opacity: 0, x: -15 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.08 }}
+                  transition={{ delay: index * 0.05, duration: 0.3 }}
                   className="flex items-center gap-3"
                 >
                   <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
