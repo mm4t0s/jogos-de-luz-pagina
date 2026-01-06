@@ -15,36 +15,34 @@ export const HeroVSLSection = () => {
       <div className="absolute top-40 right-5 w-24 h-24 bg-accent/20 rounded-full blur-2xl animate-float-slow" />
       <div className="absolute bottom-20 left-1/4 w-20 h-20 bg-primary/10 rounded-full blur-2xl" />
 
-      <div className="container relative z-10 py-4 md:py-8 px-4 md:px-6">
-        <div className="max-w-2xl mx-auto">
-          {/* Main hook - Impactful */}
+      <div className="container relative z-10 py-6 md:py-10 px-4 md:px-6">
+        <div className="max-w-xl mx-auto">
+          {/* Main hook - Compact & Impactful */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className="text-center mb-5"
+            className="text-center mb-6"
           >
-            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold leading-tight px-2">
-              <span className="text-3xl sm:text-4xl inline-block animate-bounce mr-1">👉</span>
-              <span className="text-foreground">O segredo para ensinar a Bíblia às crianças</span>{" "}
-              <span className="text-gradient block sm:inline mt-2 sm:mt-0">
+            {/* Headline container with warm background for impact */}
+            <div className="bg-gradient-to-br from-amber-50/90 via-orange-50/70 to-amber-100/60 backdrop-blur-sm rounded-3xl p-6 sm:p-8 border border-primary/20 shadow-lg">
+              <h1 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold leading-snug">
+                <span className="text-3xl sm:text-4xl inline-block mr-2">👉</span>
+                <span className="text-foreground">O segredo para ensinar a Bíblia às crianças</span>
+              </h1>
+              <p className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-gradient mt-3 leading-snug">
                 sem briga, sem tela e com interesse real!
-              </span>
-              <span className="inline-block ml-1 text-2xl sm:text-3xl animate-pulse">✨</span>
-            </h1>
-          </motion.div>
-
-          {/* Video CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1, duration: 0.4 }}
-            className="text-center mb-4"
-          >
-            <p className="text-foreground font-semibold text-base md:text-lg flex items-center justify-center gap-2">
-              <span className="text-xl">▶️</span>
-              Assista ao vídeo e descubra o método
-            </p>
+                <span className="inline-block ml-2 animate-pulse">✨</span>
+              </p>
+              
+              {/* Video CTA - integrated */}
+              <div className="mt-4 pt-4 border-t border-primary/15">
+                <p className="text-foreground font-semibold text-sm sm:text-base flex items-center justify-center gap-2">
+                  <span className="text-lg">▶️</span>
+                  Assista ao vídeo e descubra o método
+                </p>
+              </div>
+            </div>
           </motion.div>
 
           {/* Video placeholder - Warm inviting design */}
@@ -52,7 +50,7 @@ export const HeroVSLSection = () => {
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.15, duration: 0.4 }}
-            className="relative mx-auto max-w-sm aspect-[9/16] rounded-2xl overflow-hidden bg-gradient-to-br from-primary/25 via-amber-100/50 to-accent/20 border-2 border-primary/40 shadow-elevated cursor-pointer group mb-5"
+            className="relative mx-auto max-w-xs aspect-[9/16] rounded-2xl overflow-hidden bg-gradient-to-br from-primary/25 via-amber-100/50 to-accent/20 border-2 border-primary/40 shadow-elevated cursor-pointer group mb-6"
             onClick={() => {
               alert("Vídeo em breve!");
             }}
