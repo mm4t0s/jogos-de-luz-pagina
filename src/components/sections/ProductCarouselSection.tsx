@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import {
   Carousel,
   CarouselContent,
@@ -44,7 +43,6 @@ export const ProductCarouselSection = ({
   subtitle,
   accentColor = "primary",
   images,
-  layout = "vertical",
   placeholderCount = 5,
   placeholderLabels,
 }: ProductCarouselSectionProps) => {
@@ -61,123 +59,97 @@ export const ProductCarouselSection = ({
       <div className="absolute inset-0 bg-secondary/30" />
 
       <div className="container relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-8"
-        >
+        <div className="text-center mb-8">
           <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-2 italic">
             {title}
           </h2>
           {subtitle && (
             <p className="text-muted-foreground text-sm md:text-base px-4">{subtitle}</p>
           )}
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
-        >
-          <div className="relative px-4 sm:px-12">
-            <Carousel
-              opts={{
-                align: "start",
-                loop: true,
-              }}
-              className="w-full"
-            >
-              <CarouselContent className="-ml-2 sm:-ml-4">
-                {hasImages ? (
-                  images.map((item, index) => {
-                    const isStacked = "type" in item && item.type === "stacked";
-                    const isSingle = "type" in item && item.type === "single";
-                    const isSimple = !("type" in item);
-                    
-                    return (
-                      <CarouselItem 
-                        key={index} 
-                        className="pl-2 sm:pl-4 basis-[85%] sm:basis-1/2 lg:basis-1/3"
-                      >
-                        <motion.div
-                          whileHover={{ y: -5, scale: 1.02 }}
-                          transition={{ duration: 0.2 }}
-                          className="h-full"
-                        >
-                          {isStacked ? (
-                            <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-elevated group cursor-pointer transition-all duration-300 hover:shadow-3d bg-card flex flex-col gap-2">
-                              {item.images.map((img, imgIndex) => (
-                                <img
-                                  key={imgIndex}
-                                  src={img.src}
-                                  alt={img.alt}
-                                  loading="lazy"
-                                  className="w-full h-auto object-cover"
-                                />
-                              ))}
-                            </div>
-                          ) : (
-                            <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-elevated group cursor-pointer transition-all duration-300 hover:shadow-3d bg-card">
+        <div className="relative px-4 sm:px-12">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-2 sm:-ml-4">
+              {hasImages ? (
+                images.map((item, index) => {
+                  const isStacked = "type" in item && item.type === "stacked";
+                  const isSingle = "type" in item && item.type === "single";
+                  const isSimple = !("type" in item);
+                  
+                  return (
+                    <CarouselItem 
+                      key={index} 
+                      className="pl-2 sm:pl-4 basis-[85%] sm:basis-1/2 lg:basis-1/3"
+                    >
+                      <div className="h-full hover:-translate-y-1 hover:scale-[1.02] transition-transform duration-200">
+                        {isStacked ? (
+                          <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-elevated group cursor-pointer transition-all duration-300 hover:shadow-3d bg-card flex flex-col gap-2">
+                            {item.images.map((img, imgIndex) => (
                               <img
-                                src={(isSingle || isSimple) ? (item as ProductImage | SingleImage).src : ""}
-                                alt={(isSingle || isSimple) ? (item as ProductImage | SingleImage).alt : ""}
+                                key={imgIndex}
+                                src={img.src}
+                                alt={img.alt}
                                 loading="lazy"
                                 className="w-full h-auto object-cover"
                               />
-                            </div>
-                          )}
-                        </motion.div>
-                      </CarouselItem>
-                    );
-                  })
-                ) : (
-                  Array.from({ length: placeholderCount }).map((_, index) => (
-                    <CarouselItem key={index} className="pl-2 sm:pl-4 basis-[85%] sm:basis-1/2 lg:basis-1/3">
-                      <motion.div
-                        whileHover={{ y: -5, scale: 1.02 }}
-                        transition={{ duration: 0.2 }}
-                        className="h-full"
-                      >
-                        <div
-                          className={`relative aspect-[3/4] rounded-xl sm:rounded-2xl bg-gradient-to-b ${colorClasses[accentColor]} border-2 border-dashed flex flex-col items-center justify-center p-4 sm:p-6 overflow-hidden group cursor-pointer transition-all duration-300 hover:shadow-elevated`}
-                        >
-                          <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-muted/50 flex items-center justify-center mb-3 sm:mb-4">
-                            <ImageIcon className="w-6 h-6 sm:w-8 sm:h-8 text-muted-foreground" />
+                            ))}
                           </div>
-                          <p className="text-muted-foreground text-center text-xs sm:text-sm font-medium">
-                            {placeholderLabels?.[index] || `Produto ${index + 1}`}
-                          </p>
-                          <p className="text-muted-foreground/60 text-[10px] sm:text-xs mt-2 text-center">
-                            Arraste uma imagem aqui
-                          </p>
-
-                          <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4 sm:pb-6">
-                            <span className="text-primary-foreground font-semibold text-xs sm:text-sm px-4 text-center">
-                              {placeholderLabels?.[index] || `Produto ${index + 1}`}
-                            </span>
+                        ) : (
+                          <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-elevated group cursor-pointer transition-all duration-300 hover:shadow-3d bg-card">
+                            <img
+                              src={(isSingle || isSimple) ? (item as ProductImage | SingleImage).src : ""}
+                              alt={(isSingle || isSimple) ? (item as ProductImage | SingleImage).alt : ""}
+                              loading="lazy"
+                              className="w-full h-auto object-cover"
+                            />
                           </div>
-                        </div>
-                      </motion.div>
+                        )}
+                      </div>
                     </CarouselItem>
-                  ))
-                )}
-              </CarouselContent>
-              <CarouselPrevious className="-left-2 sm:left-0 bg-card shadow-elevated border-border hover:bg-primary hover:text-primary-foreground h-8 w-8 sm:h-10 sm:w-10" />
-              <CarouselNext className="-right-2 sm:right-0 bg-card shadow-elevated border-border hover:bg-primary hover:text-primary-foreground h-8 w-8 sm:h-10 sm:w-10" />
-            </Carousel>
-          </div>
-        </motion.div>
+                  );
+                })
+              ) : (
+                Array.from({ length: placeholderCount }).map((_, index) => (
+                  <CarouselItem key={index} className="pl-2 sm:pl-4 basis-[85%] sm:basis-1/2 lg:basis-1/3">
+                    <div className="h-full hover:-translate-y-1 hover:scale-[1.02] transition-transform duration-200">
+                      <div
+                        className={`relative aspect-[3/4] rounded-xl sm:rounded-2xl bg-gradient-to-b ${colorClasses[accentColor]} border-2 border-dashed flex flex-col items-center justify-center p-4 sm:p-6 overflow-hidden group cursor-pointer transition-all duration-300 hover:shadow-elevated`}
+                      >
+                        <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-muted/50 flex items-center justify-center mb-3 sm:mb-4">
+                          <ImageIcon className="w-6 h-6 sm:w-8 sm:h-8 text-muted-foreground" />
+                        </div>
+                        <p className="text-muted-foreground text-center text-xs sm:text-sm font-medium">
+                          {placeholderLabels?.[index] || `Produto ${index + 1}`}
+                        </p>
+                        <p className="text-muted-foreground/60 text-[10px] sm:text-xs mt-2 text-center">
+                          Arraste uma imagem aqui
+                        </p>
+
+                        <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4 sm:pb-6">
+                          <span className="text-primary-foreground font-semibold text-xs sm:text-sm px-4 text-center">
+                            {placeholderLabels?.[index] || `Produto ${index + 1}`}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </CarouselItem>
+                ))
+              )}
+            </CarouselContent>
+            <CarouselPrevious className="-left-2 sm:left-0 bg-card shadow-elevated border-border hover:bg-primary hover:text-primary-foreground h-8 w-8 sm:h-10 sm:w-10" />
+            <CarouselNext className="-right-2 sm:right-0 bg-card shadow-elevated border-border hover:bg-primary hover:text-primary-foreground h-8 w-8 sm:h-10 sm:w-10" />
+          </Carousel>
+        </div>
 
         {/* CTA after carousel */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-          className="flex justify-center mt-8"
-        >
+        <div className="flex justify-center mt-8">
           <Button
             size="lg"
             onClick={() => {
@@ -187,7 +159,7 @@ export const ProductCarouselSection = ({
           >
             Quero meu Kit Jogos de Luz →
           </Button>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
