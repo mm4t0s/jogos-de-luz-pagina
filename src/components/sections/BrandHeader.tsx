@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Star } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 export const BrandHeader = () => {
   return (
@@ -11,10 +11,9 @@ export const BrandHeader = () => {
           transition={{ duration: 0.5 }}
           className="flex items-center justify-center md:justify-start"
         >
-          {/* Logo - Warm gradient */}
-          <div className="flex items-center gap-2 gradient-cta px-4 py-2 rounded-full shadow-lg">
-            <Star className="w-4 h-4 text-primary-foreground fill-primary-foreground" />
-            
+          {/* Clean Logo with warm accent */}
+          <div className="flex items-center gap-2 bg-primary px-4 py-2 rounded-full shadow-md">
+            <Sparkles className="w-4 h-4 text-primary-foreground" />
             <span className="text-sm md:text-base font-bold text-primary-foreground tracking-wide">
               FaithGoodsKids
             </span>
