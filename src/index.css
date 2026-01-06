@@ -6,74 +6,67 @@
 
 @layer base {
   :root {
-    --background: 45 50% 98%;
-    --foreground: 240 30% 20%;
+    --background: 40 30% 98%;
+    --foreground: 30 20% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 240 30% 20%;
+    --card-foreground: 30 20% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 240 30% 20%;
+    --popover-foreground: 30 20% 15%;
 
-    --primary: 25 90% 55%;
+    --primary: 25 95% 53%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 340 70% 60%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 35 30% 95%;
+    --secondary-foreground: 30 20% 20%;
 
-    --muted: 45 40% 94%;
-    --muted-foreground: 240 20% 45%;
+    --muted: 35 20% 94%;
+    --muted-foreground: 30 15% 45%;
 
-    --accent: 180 60% 48%;
+    --accent: 35 100% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 45 30% 88%;
-    --input: 45 30% 90%;
-    --ring: 25 90% 55%;
+    --border: 35 20% 90%;
+    --input: 35 20% 90%;
+    --ring: 25 95% 53%;
 
     --radius: 0.75rem;
 
-    /* Kids Color Tokens */
-    --kids-orange: 25 90% 55%;
-    --kids-pink: 340 70% 60%;
-    --kids-teal: 180 60% 48%;
-    --kids-yellow: 45 95% 55%;
-
     /* Premium Design Tokens */
-    --glass-bg: rgba(255, 255, 255, 0.85);
-    --glass-border: rgba(255, 255, 255, 0.5);
+    --glass-bg: rgba(255, 255, 255, 0.8);
+    --glass-border: rgba(255, 255, 255, 0.4);
     --glass-blur: 20px;
     
-    /* Soft Colorful Gradients */
-    --gradient-hero: linear-gradient(180deg, hsl(45 50% 98%) 0%, hsl(45 40% 96%) 100%);
-    --gradient-warm: linear-gradient(135deg, hsl(45 60% 97%) 0%, hsl(25 40% 95%) 100%);
-    --gradient-cta: linear-gradient(135deg, hsl(25 90% 55%) 0%, hsl(340 70% 58%) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(45 95% 55%) 0%, hsl(25 90% 55%) 100%);
-    --gradient-kids: linear-gradient(135deg, hsl(25 90% 55%) 0%, hsl(340 70% 60%) 50%, hsl(180 60% 48%) 100%);
-    --gradient-dark: linear-gradient(180deg, hsl(240 30% 15%) 0%, hsl(240 35% 10%) 100%);
-    --gradient-glow: radial-gradient(ellipse at center, hsl(25 90% 55% / 0.15) 0%, transparent 70%);
+    /* Gradients */
+    --gradient-hero: linear-gradient(180deg, hsl(40 30% 98%) 0%, hsl(35 25% 96%) 100%);
+    --gradient-warm: linear-gradient(135deg, hsl(40 40% 97%) 0%, hsl(35 30% 95%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(25 95% 55%) 0%, hsl(15 90% 50%) 50%, hsl(35 100% 50%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(40 90% 55%) 0%, hsl(30 95% 50%) 100%);
+    --gradient-dark: linear-gradient(180deg, hsl(30 20% 12%) 0%, hsl(25 25% 8%) 100%);
+    --gradient-glow: radial-gradient(ellipse at center, hsl(25 95% 53% / 0.15) 0%, transparent 70%);
     
     /* Shadows */
-    --shadow-soft: 0 4px 20px -4px hsl(240 30% 20% / 0.08);
-    --shadow-elevated: 0 20px 50px -20px hsl(240 30% 20% / 0.15);
-    --shadow-glow: 0 0 60px -10px hsl(25 90% 55% / 0.4);
-    --shadow-3d: 0 25px 60px -15px hsl(240 30% 20% / 0.2);
-    --shadow-gold: 0 10px 40px -10px hsl(25 90% 55% / 0.5);
+    --shadow-soft: 0 4px 20px -4px hsl(30 20% 15% / 0.08);
+    --shadow-elevated: 0 20px 50px -20px hsl(30 20% 15% / 0.15);
+    --shadow-glow: 0 0 60px -10px hsl(25 95% 53% / 0.4);
+    --shadow-3d: 0 25px 60px -15px hsl(30 20% 15% / 0.25);
+    --shadow-gold: 0 10px 40px -10px hsl(25 95% 53% / 0.5);
 
     --font-display: 'Playfair Display', serif;
     --font-body: 'DM Sans', sans-serif;
 
     --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 240 30% 20%;
-    --sidebar-primary: 25 90% 55%;
+    --sidebar-foreground: 30 20% 15%;
+    --sidebar-primary: 25 95% 53%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 45 40% 94%;
-    --sidebar-accent-foreground: 240 30% 20%;
-    --sidebar-border: 45 30% 88%;
-    --sidebar-ring: 25 90% 55%;
+    --sidebar-accent: 35 30% 95%;
+    --sidebar-accent-foreground: 30 20% 20%;
+    --sidebar-border: 35 20% 90%;
+    --sidebar-ring: 25 95% 53%;
   }
 
   .dark {
@@ -168,28 +161,17 @@
 
   /* Text Gradients */
   .text-gradient {
-    background: linear-gradient(135deg, hsl(25 90% 50%) 0%, hsl(340 70% 55%) 100%);
+    background: linear-gradient(135deg, hsl(25 95% 50%) 0%, hsl(35 100% 50%) 50%, hsl(30 90% 45%) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .text-gradient-gold {
-    background: linear-gradient(135deg, hsl(45 95% 55%) 0%, hsl(25 90% 55%) 100%);
+    background: linear-gradient(135deg, hsl(40 85% 55%) 0%, hsl(35 95% 50%) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-  }
-
-  .text-gradient-kids {
-    background: linear-gradient(135deg, hsl(25 90% 55%) 0%, hsl(340 70% 58%) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .gradient-kids {
-    background: var(--gradient-kids);
   }
 
   /* Shadows */
