@@ -6,77 +6,74 @@
 
 @layer base {
   :root {
-    --background: 50 100% 98%;
-    --foreground: 260 60% 25%;
+    --background: 45 50% 98%;
+    --foreground: 240 30% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 260 60% 25%;
+    --card-foreground: 240 30% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 260 60% 25%;
+    --popover-foreground: 240 30% 20%;
 
-    --primary: 340 85% 60%;
+    --primary: 25 90% 55%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 180 70% 50%;
+    --secondary: 340 70% 60%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 45 100% 95%;
-    --muted-foreground: 260 40% 40%;
+    --muted: 45 40% 94%;
+    --muted-foreground: 240 20% 45%;
 
-    --accent: 45 100% 55%;
-    --accent-foreground: 260 60% 25%;
+    --accent: 180 60% 48%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 280 30% 85%;
-    --input: 280 30% 90%;
-    --ring: 340 85% 60%;
+    --border: 45 30% 88%;
+    --input: 45 30% 90%;
+    --ring: 25 90% 55%;
 
     --radius: 0.75rem;
 
-    /* Colorful Kids Tokens */
-    --kids-pink: 340 85% 60%;
-    --kids-purple: 280 70% 60%;
-    --kids-blue: 200 90% 55%;
-    --kids-green: 150 70% 50%;
-    --kids-yellow: 45 100% 55%;
-    --kids-orange: 25 95% 55%;
+    /* Kids Color Tokens */
+    --kids-orange: 25 90% 55%;
+    --kids-pink: 340 70% 60%;
+    --kids-teal: 180 60% 48%;
+    --kids-yellow: 45 95% 55%;
 
     /* Premium Design Tokens */
     --glass-bg: rgba(255, 255, 255, 0.85);
     --glass-border: rgba(255, 255, 255, 0.5);
     --glass-blur: 20px;
     
-    /* Colorful Gradients */
-    --gradient-hero: linear-gradient(180deg, hsl(50 100% 98%) 0%, hsl(45 100% 96%) 50%, hsl(340 50% 97%) 100%);
-    --gradient-warm: linear-gradient(135deg, hsl(45 100% 97%) 0%, hsl(340 50% 96%) 100%);
-    --gradient-cta: linear-gradient(135deg, hsl(340 85% 60%) 0%, hsl(25 95% 55%) 50%, hsl(45 100% 55%) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(45 100% 55%) 0%, hsl(25 95% 55%) 50%, hsl(340 85% 60%) 100%);
-    --gradient-rainbow: linear-gradient(135deg, hsl(340 85% 60%) 0%, hsl(280 70% 60%) 25%, hsl(200 90% 55%) 50%, hsl(150 70% 50%) 75%, hsl(45 100% 55%) 100%);
-    --gradient-dark: linear-gradient(180deg, hsl(260 50% 20%) 0%, hsl(280 60% 15%) 100%);
-    --gradient-glow: radial-gradient(ellipse at center, hsl(340 85% 60% / 0.2) 0%, transparent 70%);
+    /* Soft Colorful Gradients */
+    --gradient-hero: linear-gradient(180deg, hsl(45 50% 98%) 0%, hsl(45 40% 96%) 100%);
+    --gradient-warm: linear-gradient(135deg, hsl(45 60% 97%) 0%, hsl(25 40% 95%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(25 90% 55%) 0%, hsl(340 70% 58%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(45 95% 55%) 0%, hsl(25 90% 55%) 100%);
+    --gradient-kids: linear-gradient(135deg, hsl(25 90% 55%) 0%, hsl(340 70% 60%) 50%, hsl(180 60% 48%) 100%);
+    --gradient-dark: linear-gradient(180deg, hsl(240 30% 15%) 0%, hsl(240 35% 10%) 100%);
+    --gradient-glow: radial-gradient(ellipse at center, hsl(25 90% 55% / 0.15) 0%, transparent 70%);
     
     /* Shadows */
-    --shadow-soft: 0 4px 20px -4px hsl(260 60% 25% / 0.1);
-    --shadow-elevated: 0 20px 50px -20px hsl(260 60% 25% / 0.2);
-    --shadow-glow: 0 0 60px -10px hsl(340 85% 60% / 0.5);
-    --shadow-3d: 0 25px 60px -15px hsl(260 60% 25% / 0.3);
-    --shadow-gold: 0 10px 40px -10px hsl(45 100% 55% / 0.6);
-    --shadow-rainbow: 0 10px 40px -10px hsl(340 85% 60% / 0.4), 0 -5px 30px -10px hsl(200 90% 55% / 0.3);
+    --shadow-soft: 0 4px 20px -4px hsl(240 30% 20% / 0.08);
+    --shadow-elevated: 0 20px 50px -20px hsl(240 30% 20% / 0.15);
+    --shadow-glow: 0 0 60px -10px hsl(25 90% 55% / 0.4);
+    --shadow-3d: 0 25px 60px -15px hsl(240 30% 20% / 0.2);
+    --shadow-gold: 0 10px 40px -10px hsl(25 90% 55% / 0.5);
 
     --font-display: 'Playfair Display', serif;
     --font-body: 'DM Sans', sans-serif;
 
     --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 260 60% 25%;
-    --sidebar-primary: 340 85% 60%;
+    --sidebar-foreground: 240 30% 20%;
+    --sidebar-primary: 25 90% 55%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 45 100% 95%;
-    --sidebar-accent-foreground: 260 60% 25%;
-    --sidebar-border: 280 30% 85%;
-    --sidebar-ring: 340 85% 60%;
+    --sidebar-accent: 45 40% 94%;
+    --sidebar-accent-foreground: 240 30% 20%;
+    --sidebar-border: 45 30% 88%;
+    --sidebar-ring: 25 90% 55%;
   }
 
   .dark {
@@ -169,32 +166,30 @@
     background: var(--gradient-dark);
   }
 
-  /* Text Gradients - Colorful */
+  /* Text Gradients */
   .text-gradient {
-    background: linear-gradient(135deg, hsl(340 85% 55%) 0%, hsl(25 95% 55%) 50%, hsl(45 100% 50%) 100%);
+    background: linear-gradient(135deg, hsl(25 90% 50%) 0%, hsl(340 70% 55%) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .text-gradient-gold {
-    background: linear-gradient(135deg, hsl(45 100% 55%) 0%, hsl(25 95% 55%) 100%);
+    background: linear-gradient(135deg, hsl(45 95% 55%) 0%, hsl(25 90% 55%) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  .text-gradient-rainbow {
-    background: linear-gradient(135deg, hsl(340 85% 60%) 0%, hsl(280 70% 60%) 25%, hsl(200 90% 55%) 50%, hsl(150 70% 50%) 75%, hsl(45 100% 55%) 100%);
+  .text-gradient-kids {
+    background: linear-gradient(135deg, hsl(25 90% 55%) 0%, hsl(340 70% 58%) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    background-size: 200% auto;
-    animation: rainbow-shift 3s ease infinite;
   }
 
-  .gradient-rainbow {
-    background: var(--gradient-rainbow);
+  .gradient-kids {
+    background: var(--gradient-kids);
   }
 
   /* Shadows */
