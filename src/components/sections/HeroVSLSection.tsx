@@ -45,34 +45,66 @@ export const HeroVSLSection = () => {
             </div>
           </motion.div>
 
-          {/* Video placeholder - Warm inviting design */}
+          {/* Video placeholder - IMPACTFUL DESIGN */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.98 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.15, duration: 0.4 }}
-            className="relative mx-auto max-w-xs aspect-[9/16] rounded-2xl overflow-hidden bg-gradient-to-br from-primary/25 via-amber-100/50 to-accent/20 border-2 border-primary/40 shadow-elevated cursor-pointer group mb-6"
-            onClick={() => {
-              alert("Vídeo em breve!");
-            }}
+            transition={{ delay: 0.15, duration: 0.5 }}
+            className="relative mx-auto max-w-sm mb-6"
           >
-            {/* Video thumbnail placeholder */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="relative">
-                {/* Pulsing ring */}
-                <div className="absolute inset-0 w-20 h-20 md:w-24 md:h-24 rounded-full bg-primary animate-ping opacity-40" />
-                {/* Play button */}
-                <div className="relative w-20 h-20 md:w-24 md:h-24 rounded-full bg-primary flex items-center justify-center shadow-gold group-hover:scale-110 transition-transform duration-300">
-                  <Play className="w-8 h-8 md:w-10 md:h-10 text-primary-foreground ml-1" fill="currentColor" />
+            {/* Animated glow ring around video */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-primary via-accent to-primary rounded-3xl blur-md opacity-75 animate-pulse" />
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-accent rounded-2xl opacity-90" />
+            
+            {/* Top urgency banner */}
+            <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-20">
+              <div className="bg-primary text-primary-foreground px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold shadow-lg flex items-center gap-2 whitespace-nowrap">
+                <span className="animate-bounce">🔥</span>
+                <span>ASSISTA AGORA</span>
+                <span className="animate-bounce">🔥</span>
+              </div>
+            </div>
+            
+            {/* Video container */}
+            <div 
+              className="relative aspect-[9/16] rounded-2xl overflow-hidden bg-gradient-to-br from-foreground/90 via-foreground/80 to-foreground/90 cursor-pointer group"
+              onClick={() => {
+                alert("Vídeo em breve!");
+              }}
+            >
+              {/* Shimmer effect overlay */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+              
+              {/* Center play button - BIG and attention-grabbing */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="relative">
+                  {/* Multiple pulsing rings */}
+                  <div className="absolute inset-0 w-28 h-28 md:w-32 md:h-32 -m-4 rounded-full bg-primary/30 animate-ping" />
+                  <div className="absolute inset-0 w-24 h-24 md:w-28 md:h-28 -m-2 rounded-full bg-primary/50 animate-pulse" />
+                  
+                  {/* Play button */}
+                  <div className="relative w-20 h-20 md:w-24 md:h-24 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-300 border-4 border-white/30">
+                    <Play className="w-10 h-10 md:w-12 md:h-12 text-white ml-1" fill="currentColor" />
+                  </div>
+                </div>
+              </div>
+              
+              {/* Bottom CTA overlay */}
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 pt-12">
+                <div className="text-center">
+                  <p className="text-white font-bold text-base sm:text-lg mb-1">
+                    👆 Clique para assistir
+                  </p>
+                  <p className="text-white/80 text-xs sm:text-sm">
+                    Vídeo curto de 2 minutos
+                  </p>
                 </div>
               </div>
             </div>
             
-            {/* Overlay text */}
-            <div className="absolute bottom-4 left-0 right-0 text-center">
-              <span className="text-sm font-semibold text-foreground bg-card/95 px-4 py-2 rounded-full shadow-lg border border-primary/20">
-                👆 Clique para assistir
-              </span>
-            </div>
+            {/* Side floating arrows pointing to video */}
+            <div className="absolute top-1/2 -left-8 -translate-y-1/2 text-2xl animate-bounce hidden sm:block">👉</div>
+            <div className="absolute top-1/2 -right-8 -translate-y-1/2 text-2xl animate-bounce hidden sm:block">👈</div>
           </motion.div>
 
           {/* Product info below video */}
@@ -109,20 +141,20 @@ export const HeroVSLSection = () => {
             {/* Discount badge */}
             <div className="relative z-10 inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold mb-4 shadow-lg">
               <span className="animate-pulse">🔥</span>
-              <span>OFERTA ESPECIAL - 52% OFF</span>
+              <span>OFERTA ESPECIAL - 76% OFF</span>
             </div>
 
             {/* Price section */}
             <div className="relative z-10 mb-4">
               <p className="text-muted-foreground line-through text-base sm:text-lg mb-1">
-                De R$ 97,00
+                De R$ 197,00
               </p>
               <div className="font-display text-5xl sm:text-6xl md:text-7xl font-bold text-gradient mb-2">
                 R$ 47
               </div>
               <div className="inline-flex items-center gap-1.5 text-primary font-semibold text-sm sm:text-base bg-primary/10 px-3 py-1 rounded-full">
                 <span>🎉</span>
-                <span>Economize R$ 50,00</span>
+                <span>Economize R$ 150,00</span>
               </div>
             </div>
 
