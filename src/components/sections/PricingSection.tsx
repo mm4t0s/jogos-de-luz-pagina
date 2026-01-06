@@ -232,7 +232,7 @@ export const PricingSection = () => {
                       <div className="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-primary/50 rounded-br-lg" />
 
                       <div className="relative">
-                        <p className="text-muted-foreground mb-2 text-sm">De <span className="line-through">R$97</span> por apenas</p>
+                        <p className="text-muted-foreground mb-2 text-sm">De <span className="line-through">R$197</span> por apenas</p>
                         <div className="flex items-baseline justify-center gap-1">
                           <span className="text-2xl md:text-3xl font-bold text-foreground">R$</span>
                           <motion.span 
