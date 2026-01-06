@@ -11,8 +11,8 @@ export const BrandHeader = () => {
           transition={{ duration: 0.5 }}
           className="flex items-center justify-center md:justify-start"
         >
-          {/* Colorful Logo - Clean */}
-          <div className="flex items-center gap-2 bg-gradient-to-r from-primary via-secondary to-accent px-4 py-2 rounded-full shadow-lg">
+          {/* Logo - Warm gradient */}
+          <div className="flex items-center gap-2 gradient-cta px-4 py-2 rounded-full shadow-lg">
             <Star className="w-4 h-4 text-primary-foreground fill-primary-foreground" />
             
             <span className="text-sm md:text-base font-bold text-primary-foreground tracking-wide">

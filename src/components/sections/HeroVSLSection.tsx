@@ -26,7 +26,7 @@ export const HeroVSLSection = () => {
             <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold leading-tight px-2">
               <span className="text-3xl sm:text-4xl inline-block animate-bounce mr-1">👉</span>
               <span className="text-foreground">O segredo para ensinar a Bíblia às crianças</span>{" "}
-              <span className="text-gradient-kids block sm:inline mt-2 sm:mt-0">
+              <span className="text-gradient block sm:inline mt-2 sm:mt-0">
                 sem briga, sem tela e com interesse real!
               </span>
               <span className="inline-block ml-1 text-2xl sm:text-3xl animate-pulse">✨</span>
@@ -145,11 +145,11 @@ export const HeroVSLSection = () => {
                 Seguro
               </span>
               <span className="flex items-center gap-1.5">
-                <Zap className="w-4 h-4 text-accent" />
+                <Zap className="w-4 h-4 text-primary" />
                 Imediato
               </span>
               <span className="flex items-center gap-1.5">
-                <Clock className="w-4 h-4 text-secondary" />
+                <Clock className="w-4 h-4 text-primary" />
                 Garantia 7 dias
               </span>
             </div>
