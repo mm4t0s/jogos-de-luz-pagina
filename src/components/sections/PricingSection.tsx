@@ -91,7 +91,7 @@ export const PricingSection = () => {
                 <div className="flex justify-center mb-4">
                   <div className="relative">
                     {/* Glow effect */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-accent via-primary to-accent rounded-full blur-md opacity-60 animate-pulse" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-accent via-primary to-accent rounded-full blur-md opacity-60" />
                     
                     <div className="relative flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-primary via-accent to-primary rounded-full shadow-gold border border-white/20">
                       <Star className="w-4 h-4 text-primary-foreground fill-primary-foreground" />
@@ -178,8 +178,8 @@ export const PricingSection = () => {
 
                 {/* CTA Button with pulse effect */}
                 <div className="relative">
-                  {/* Pulsing glow behind button */}
-                  <div className="absolute inset-0 gradient-cta rounded-2xl blur-xl opacity-50 animate-pulse" />
+                  {/* Glow behind button */}
+                  <div className="absolute inset-0 gradient-cta rounded-2xl blur-xl opacity-50" />
                   
                   <Button
                     size="lg"
