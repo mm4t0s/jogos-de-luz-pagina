@@ -107,11 +107,11 @@ export const HeroVSLSection = () => {
               </div>
             </div>
 
-            {/* CTA Button - subtle pulse animation */}
+            {/* CTA Button */}
             <Button
               size="lg"
               asChild
-              className="relative z-10 bg-primary hover:bg-primary/90 shadow-gold text-primary-foreground font-bold text-base sm:text-lg px-8 py-6 rounded-2xl hover:scale-105 transition-all duration-300 w-full mb-5 animate-[pulse_3s_ease-in-out_infinite]"
+              className="relative z-10 bg-primary hover:bg-primary/90 shadow-gold text-primary-foreground font-bold text-base sm:text-lg px-8 py-6 rounded-2xl hover:scale-105 transition-all duration-300 w-full mb-5"
             >
               <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer">
                 Quero meu Kit Jogos de Luz agora 🚀
