@@ -21,7 +21,7 @@ export const HeroVSLSection = () => {
               </h1>
               <p className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-gradient mt-3 leading-snug">
                 sem briga, sem tela e com interesse real!
-                <span className="inline-block ml-2 animate-pulse">✨</span>
+                <span className="inline-block ml-2">✨</span>
               </p>
               
               {/* Video CTA - integrated */}
@@ -36,16 +36,16 @@ export const HeroVSLSection = () => {
 
           {/* Vimeo Video - IMPACTFUL DESIGN */}
           <div className="relative mx-auto max-w-sm mb-6">
-            {/* Animated glow ring around video */}
-            <div className="absolute -inset-1 bg-gradient-to-r from-primary via-accent to-primary rounded-3xl blur-md opacity-75 animate-pulse" />
+            {/* Glow ring around video */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-primary via-accent to-primary rounded-3xl blur-md opacity-75" />
             <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-accent rounded-2xl opacity-90" />
             
             {/* Top urgency banner */}
             <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-20">
               <div className="bg-primary text-primary-foreground px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold shadow-lg flex items-center gap-2 whitespace-nowrap">
-                <span className="animate-bounce">🔥</span>
+                <span>🔥</span>
                 <span>ASSISTA AGORA</span>
-                <span className="animate-bounce">🔥</span>
+                <span>🔥</span>
               </div>
             </div>
             
@@ -62,8 +62,8 @@ export const HeroVSLSection = () => {
             </div>
             
             {/* Side floating arrows pointing to video */}
-            <div className="absolute top-1/2 -left-8 -translate-y-1/2 text-2xl animate-bounce hidden sm:block">👉</div>
-            <div className="absolute top-1/2 -right-8 -translate-y-1/2 text-2xl animate-bounce hidden sm:block">👈</div>
+            <div className="absolute top-1/2 -left-8 -translate-y-1/2 text-2xl hidden sm:block">👉</div>
+            <div className="absolute top-1/2 -right-8 -translate-y-1/2 text-2xl hidden sm:block">👈</div>
           </div>
 
           {/* Product info below video */}
@@ -89,7 +89,7 @@ export const HeroVSLSection = () => {
             
             {/* Discount badge */}
             <div className="relative z-10 inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold mb-4 shadow-lg">
-              <span className="animate-pulse">🔥</span>
+              <span>🔥</span>
               <span>OFERTA ESPECIAL - 76% OFF</span>
             </div>
 
@@ -107,11 +107,11 @@ export const HeroVSLSection = () => {
               </div>
             </div>
 
-            {/* CTA Button */}
+            {/* CTA Button - subtle pulse animation */}
             <Button
               size="lg"
               asChild
-              className="relative z-10 bg-primary hover:bg-primary/90 shadow-gold text-primary-foreground font-bold text-base sm:text-lg px-8 py-6 rounded-2xl hover:scale-105 transition-all duration-300 w-full mb-5"
+              className="relative z-10 bg-primary hover:bg-primary/90 shadow-gold text-primary-foreground font-bold text-base sm:text-lg px-8 py-6 rounded-2xl hover:scale-105 transition-all duration-300 w-full mb-5 animate-[pulse_3s_ease-in-out_infinite]"
             >
               <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer">
                 Quero meu Kit Jogos de Luz agora 🚀
@@ -138,7 +138,7 @@ export const HeroVSLSection = () => {
           {/* Scroll hint */}
           <div className="flex flex-col items-center mt-6 text-muted-foreground">
             <span className="text-xs mb-1">Veja o que está incluso 👇</span>
-            <ArrowDown className="w-4 h-4 animate-bounce text-primary" />
+            <ArrowDown className="w-4 h-4 text-primary" />
           </div>
         </div>
       </div>
