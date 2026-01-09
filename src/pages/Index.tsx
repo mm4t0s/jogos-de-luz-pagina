@@ -89,13 +89,17 @@ const Index = () => {
       {/* What you receive - immediately after CTA */}
       <ContentSummarySection />
       
-      {/* Pain points + solution */}
-      <PainPointsSection />
+      {/* Product Carousels - Strategic placement right after content summary */}
+      {/* Order: Desenhos (most visual) → Jogos → Atividades */}
+      <ProductCarouselSection
+        id="desenhos"
+        title="+ de 75 Desenhos Bíblicos para Colorir"
+        subtitle="Veja alguns dos desenhos prontos para colorir."
+        accentColor="accent"
+        images={drawingsImages}
+        layout="stacked"
+      />
       
-      {/* Ease of use block */}
-      <EaseOfUseSection />
-      
-      {/* Product Carousels with CTAs */}
       <ProductCarouselSection
         id="jogos"
         title="+ de 20 Jogos Bíblicos"
@@ -112,14 +116,11 @@ const Index = () => {
         images={activitiesImages}
       />
       
-      <ProductCarouselSection
-        id="desenhos"
-        title="+ de 75 Desenhos Bíblicos para Colorir"
-        subtitle="Veja alguns dos desenhos prontos para colorir."
-        accentColor="accent"
-        images={drawingsImages}
-        layout="stacked"
-      />
+      {/* Pain points + solution */}
+      <PainPointsSection />
+      
+      {/* Ease of use block */}
+      <EaseOfUseSection />
 
       {/* Objection handling */}
       <ObjectionsSection />
