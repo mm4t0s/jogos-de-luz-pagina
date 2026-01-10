@@ -1,4 +1,4 @@
-import { Sparkles } from "lucide-react";
+import { Handshake, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const GuaranteeSection = () => {
@@ -21,7 +21,7 @@ export const GuaranteeSection = () => {
                   <strong className="text-white">100% do seu investimento</strong>.
                 </p>
                 <p className="flex items-center md:items-start justify-center md:justify-start gap-2">
-                  <span>🤝</span>
+                  <Handshake className="inline-block w-5 h-6 text-gold-400" />
                   Sem perguntas. Sua confiança em primeiro lugar.
                 </p>
               </div>
@@ -32,7 +32,7 @@ export const GuaranteeSection = () => {
                 onClick={() => {
                   document.getElementById('pricing-section')?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="gradient-cta shadow-gold text-primary-foreground font-bold text-base px-8 py-6 rounded-2xl hover:scale-105 transition-all duration-300"
+                className="gradient-cta shadow-gold text-primary-foreground font-bold text-base px-8 py-6 rounded-2xl hover:scale-105 transition-all duration-3000"
               >
                 Quero meu Kit Jogos de Luz →
               </Button>
@@ -44,7 +44,7 @@ export const GuaranteeSection = () => {
                   <div className="w-full h-full rounded-full bg-gradient-to-br from-gold-500 to-gold-700 flex flex-col items-center justify-center border-4 border-gold-300/50 p-3 sm:p-4">
                     <div className="flex gap-0.5 mb-1">
                       {[1, 2, 3, 4, 5].map((star) => (
-                        <Sparkles key={star} className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-gold-200" />
+                        <Star key={star} className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-gold-200" />
                       ))}
                     </div>
                     <span className="text-gold-900 font-bold text-[10px] sm:text-xs uppercase tracking-wider">Garantia</span>

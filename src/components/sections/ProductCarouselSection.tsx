@@ -88,26 +88,29 @@ export const ProductCarouselSection = ({
                       key={index} 
                       className="pl-2 sm:pl-4 basis-[85%] sm:basis-1/2 lg:basis-1/3"
                     >
-                      <div className="h-full hover:-translate-y-1 hover:scale-[1.02] transition-transform duration-200">
+                      <div className="h-full hover:scale-[1.02] transition-transform duration-200">
                         {isStacked ? (
-                          <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-elevated group cursor-pointer transition-all duration-300 hover:shadow-3d bg-card flex flex-col gap-2">
-                            {item.images.map((img, imgIndex) => (
-                              <img
-                                key={imgIndex}
-                                src={img.src}
-                                alt={img.alt}
-                                loading="lazy"
-                                className="w-full h-auto object-cover"
-                              />
-                            ))}
+                          <div className="relative aspect-[4/6] rounded-xl sm:rounded-2xl overflow-hidden shadow-elevated group cursor-pointer transition-all duration-3000 hover:shadow-3d bg-card">
+                            <div className="h-full w-auto flex flex-col">
+                              {item.images.slice(0, 2).map((img, imgIndex) => (
+                                <div key={imgIndex} className="relative flex-1">
+                                  <img
+                                    src={img.src}
+                                    alt={img.alt}
+                                    loading="lazy"
+                                    className="w-full h-full -translate-y-1.5 scale-[1.07] object-cover object-center"
+                                  />
+                                </div>
+                              ))}
+                            </div>
                           </div>
                         ) : (
-                          <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-elevated group cursor-pointer transition-all duration-300 hover:shadow-3d bg-card">
+                          <div className="relative aspect-[4/6] rounded-xl sm:rounded-2xl overflow-hidden shadow-elevated group cursor-pointer transition-all duration-3000 hover:shadow-3d bg-card">
                             <img
                               src={(isSingle || isSimple) ? (item as ProductImage | SingleImage).src : ""}
                               alt={(isSingle || isSimple) ? (item as ProductImage | SingleImage).alt : ""}
                               loading="lazy"
-                              className="w-full h-auto object-cover"
+                              className="w-full h-full object-cover object-center"
                             />
                           </div>
                         )}
@@ -120,7 +123,7 @@ export const ProductCarouselSection = ({
                   <CarouselItem key={index} className="pl-2 sm:pl-4 basis-[85%] sm:basis-1/2 lg:basis-1/3">
                     <div className="h-full hover:-translate-y-1 hover:scale-[1.02] transition-transform duration-200">
                       <div
-                        className={`relative aspect-[3/4] rounded-xl sm:rounded-2xl bg-gradient-to-b ${colorClasses[accentColor]} border-2 border-dashed flex flex-col items-center justify-center p-4 sm:p-6 overflow-hidden group cursor-pointer transition-all duration-300 hover:shadow-elevated`}
+                        className={`relative aspect-[3/4] rounded-xl sm:rounded-2xl bg-gradient-to-b ${colorClasses[accentColor]} border-2 border-dashed flex flex-col items-center justify-center p-4 sm:p-6 overflow-hidden group cursor-pointer transition-all duration-3000 hover:shadow-elevated`}
                       >
                         <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-muted/50 flex items-center justify-center mb-3 sm:mb-4">
                           <ImageIcon className="w-6 h-6 sm:w-8 sm:h-8 text-muted-foreground" />
@@ -132,7 +135,7 @@ export const ProductCarouselSection = ({
                           Arraste uma imagem aqui
                         </p>
 
-                        <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4 sm:pb-6">
+                        <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-3000 flex items-end justify-center pb-4 sm:pb-6">
                           <span className="text-primary-foreground font-semibold text-xs sm:text-sm px-4 text-center">
                             {placeholderLabels?.[index] || `Produto ${index + 1}`}
                           </span>
@@ -155,7 +158,7 @@ export const ProductCarouselSection = ({
             onClick={() => {
               document.getElementById('pricing-section')?.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="gradient-cta shadow-gold text-primary-foreground font-bold text-base px-8 py-6 rounded-2xl hover:scale-105 transition-all duration-300"
+            className="gradient-cta shadow-gold text-primary-foreground font-bold text-base px-8 py-6 rounded-2xl hover:scale-105 transition-all duration-3000"
           >
             Quero meu Kit Jogos de Luz →
           </Button>

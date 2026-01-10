@@ -1,5 +1,4 @@
-import { BrandHeader } from "@/components/sections/BrandHeader";
-import { HeroVSLSection } from "@/components/sections/HeroVSLSection";
+import { HeroVSLSection } from "@/components/sections/01-HeroVSLSection";
 import { PainPointsSection } from "@/components/sections/PainPointsSection";
 import { ContentSummarySection } from "@/components/sections/ContentSummarySection";
 import { EaseOfUseSection } from "@/components/sections/EaseOfUseSection";
@@ -80,9 +79,7 @@ const activitiesImages = [
 
 const Index = () => {
   return (
-    <main className="min-h-screen bg-background relative">
-      <BrandHeader />
-      
+    <main className="min-h-screen bg-background relative">      
       {/* Hero VSL with immediate CTA */}
       <HeroVSLSection />
       

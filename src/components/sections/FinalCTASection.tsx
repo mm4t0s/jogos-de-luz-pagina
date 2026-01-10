@@ -31,7 +31,7 @@ export const FinalCTASection = () => {
           <Button
             size="lg"
             asChild
-            className="gradient-cta shadow-gold text-primary-foreground font-bold text-base md:text-lg px-8 py-6 rounded-2xl hover:scale-105 transition-all duration-300"
+            className="gradient-cta shadow-gold text-primary-foreground font-bold text-base md:text-lg px-8 py-6 rounded-2xl hover:scale-105 transition-all duration-3000"
           >
             <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer">
               Quero meu Kit Jogos de Luz agora

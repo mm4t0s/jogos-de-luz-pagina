@@ -143,7 +143,7 @@ export const TiltCard = ({
       ref={ref}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className={`transition-transform duration-300 ease-out ${className}`}
+      className={`transition-transform duration-3000 ease-out ${className}`}
       style={{ transformStyle: "preserve-3d" }}
     >
       {children}

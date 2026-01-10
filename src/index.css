@@ -1,8 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
 
 @layer base {
   :root {
@@ -56,8 +56,8 @@
     --shadow-3d: 0 25px 60px -15px hsl(30 20% 15% / 0.25);
     --shadow-gold: 0 10px 40px -10px hsl(25 95% 53% / 0.5);
 
-    --font-display: 'Playfair Display', serif;
-    --font-body: 'DM Sans', sans-serif;
+    --font-display: 'Nunito', sans-serif;
+    --font-body: 'Nunito', sans-serif;
 
     --sidebar-background: 0 0% 100%;
     --sidebar-foreground: 30 20% 15%;

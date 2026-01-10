@@ -40,7 +40,7 @@ export const MinistrySection = () => {
             onClick={() => {
               document.getElementById('pricing-section')?.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="gradient-cta shadow-gold text-primary-foreground font-bold text-base px-8 py-6 rounded-2xl hover:scale-105 transition-all duration-300"
+            className="gradient-cta shadow-gold text-primary-foreground font-bold text-base px-8 py-6 rounded-2xl hover:scale-105 transition-all duration-3000"
           >
             Quero meu Kit Jogos de Luz →
           </Button>
