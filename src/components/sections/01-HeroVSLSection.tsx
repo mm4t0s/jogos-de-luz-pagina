@@ -7,7 +7,7 @@ import logo from "@/assets/logo.png";
 import vslPoster from "@/assets/poster-vsl.jpg";
 import { useEffect, useRef, useState } from "react";
 
-const CHECKOUT_URL = "https://pay.cakto.com.br/3bnyiqi_657025";
+const CHECKOUT_URL = "https://pay.kiwify.com.br/s34DGSJ";
 
 export const HeroVSLSection = () => {
   const videoRef = useRef<HTMLVideoElement | null>(null);

@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ShieldCheck } from "lucide-react";
 
-const CHECKOUT_URL = "https://pay.cakto.com.br/3bnyiqi_657025";
+const CHECKOUT_URL = "https://pay.kiwify.com.br/s34DGSJ";
 
 export const FinalCTASection = () => {
   return (
