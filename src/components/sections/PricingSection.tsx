@@ -95,7 +95,7 @@ export const PricingSection = () => {
                 className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground font-bold py-6 rounded-xl transition-all"
                 onClick={() => setIsUpgradeModalOpen(true)}
               >
-                👉 Quero apenas os Desenhos
+                Quero apenas os Desenhos
               </Button>
             </div>
           </div>
@@ -171,8 +171,7 @@ export const PricingSection = () => {
                 >
                   <a href="https://pay.kiwify.com.br/s34DGSJ" target="_blank" rel="noopener noreferrer">
                     <span className="flex items-center justify-center gap-2">
-                      👉 Quero o Kit Completo Jogos de Luz
-                      <Sparkles className="w-5 h-5 group-hover:animate-spin" />
+                      Quero o Kit Completo Jogos de Luz
                     </span>
                   </a>
                 </Button>
