@@ -82,10 +82,10 @@ export const ProductCarouselSection = ({
                   const isStacked = "type" in item && item.type === "stacked";
                   const isSingle = "type" in item && item.type === "single";
                   const isSimple = !("type" in item);
-                  
+
                   return (
-                    <CarouselItem 
-                      key={index} 
+                    <CarouselItem
+                      key={index}
                       className="pl-2 sm:pl-4 basis-[85%] sm:basis-1/2 lg:basis-1/3"
                     >
                       <div className="h-full hover:scale-[1.02] transition-transform duration-200">
@@ -156,7 +156,7 @@ export const ProductCarouselSection = ({
           <Button
             size="lg"
             onClick={() => {
-              document.getElementById('pricing-section')?.scrollIntoView({ behavior: 'smooth' });
+              document.getElementById('kit-completo')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }}
             className="gradient-cta shadow-gold text-primary-foreground font-bold text-base px-8 py-6 rounded-2xl hover:scale-105 transition-all duration-3000"
           >

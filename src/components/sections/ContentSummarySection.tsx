@@ -1,16 +1,16 @@
 import { Check, Package } from "lucide-react";
 
 const summaryItems = [
-  "Mais de 20 jogos bíblicos prontos para imprimir",
-  "Mais de 600 atividades cristãs organizadas",
-  "Mais de 75 desenhos bíblicos para colorir",
-  "Material pronto para usar em casa ou na igreja",
+  "Tudo o que está incluso no Kit Básico",
+  "Mais de 600 atividades bíblicas prontas",
+  "Mais de 20 jogos bíblicos interativos",
+  "Material pronto para casa, igreja ou ministério infantil",
   "Ensino tradicional, sem telas",
 ];
 
 export const ContentSummarySection = () => {
   return (
-    <section className="pt-4 pb-8 md:pt-6 md:pb-12 relative overflow-hidden bg-card">
+    <section id="conteudo" className="pt-4 pb-8 md:pt-6 md:pb-12 relative overflow-hidden bg-card">
       <div className="container relative z-10 px-4 md:px-6">
         <div className="max-w-2xl mx-auto">
           <div className="p-5 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl bg-secondary/50 border border-border/50">

@@ -25,17 +25,15 @@ export const FinalCTASection = () => {
             <span>•</span>
             <span>Acesso imediato</span>
             <span>•</span>
-            <span>Garantia de 7 dias</span>
+            <span>Garantia de 30 dias</span>
           </div>
 
           <Button
             size="lg"
-            asChild
             className="gradient-cta shadow-gold text-primary-foreground font-bold text-base md:text-lg px-8 py-6 rounded-2xl hover:scale-105 transition-all duration-3000"
+            onClick={() => document.getElementById('kit-completo')?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
           >
-            <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer">
-              Quero meu Kit Jogos de Luz agora
-            </a>
+            Quero meu Kit Jogos de Luz agora
           </Button>
         </div>
       </div>

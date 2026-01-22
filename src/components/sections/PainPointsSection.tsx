@@ -1,4 +1,5 @@
 import { AlertCircle, Check } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const painPoints = [
   "Crianças passando muito tempo nas telas",
@@ -45,6 +46,16 @@ export const PainPointsSection = () => {
                 <strong>O Kit Jogos de Luz foi criado para resolver exatamente isso</strong>, ensinando valores bíblicos de forma leve, prática e do jeito que a criança aprende hoje: <strong>brincando</strong>.
               </p>
             </div>
+          </div>
+
+          <div className="flex justify-center mt-6 md:mt-8">
+            <Button
+              size="lg"
+              className="gradient-cta shadow-gold text-primary-foreground font-bold text-base px-8 py-6 rounded-2xl hover:scale-105 transition-all duration-3000"
+              onClick={() => document.getElementById('kit-completo')?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
+            >
+              Quero transformar a rotina da minha casa
+            </Button>
           </div>
         </div>
       </div>

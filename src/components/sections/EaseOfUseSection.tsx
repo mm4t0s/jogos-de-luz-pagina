@@ -1,4 +1,5 @@
 import { Zap, Clock } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export const EaseOfUseSection = () => {
   return (
@@ -27,6 +28,16 @@ export const EaseOfUseSection = () => {
                 Atividades de <strong>10 a 20 minutos</strong>
               </span>
             </div>
+          </div>
+
+          <div className="flex justify-center mt-8">
+            <Button
+              size="lg"
+              className="gradient-cta shadow-gold text-primary-foreground font-bold text-base px-8 py-6 rounded-2xl hover:scale-105 transition-all duration-3000"
+              onClick={() => document.getElementById('kit-completo')?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
+            >
+              Quero atividades prontas para usar
+            </Button>
           </div>
         </div>
       </div>

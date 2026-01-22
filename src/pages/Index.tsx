@@ -10,6 +10,7 @@ import { FAQSection } from "@/components/sections/FAQSection";
 import { GuaranteeSection } from "@/components/sections/GuaranteeSection";
 import { FinalCTASection } from "@/components/sections/FinalCTASection";
 import { Footer } from "@/components/sections/Footer";
+import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 
 // Game images
 import game3Pistas from "@/assets/games/3-pistas.png";
@@ -46,22 +47,22 @@ const gamesImages = [
 
 const drawingsImages = [
   { type: "single" as const, src: desenhosCover, alt: "75 Desenhos Bíblicos para Colorir" },
-  { 
-    type: "stacked" as const, 
+  {
+    type: "stacked" as const,
     images: [
       { src: aQueda, alt: "A Queda - Gênesis 3:6" },
       { src: caimAbel, alt: "Caim e Abel - Gênesis 4:8" },
     ]
   },
-  { 
-    type: "stacked" as const, 
+  {
+    type: "stacked" as const,
     images: [
       { src: promessaAbraao, alt: "A Promessa a Abraão - Gênesis 12:2-3" },
       { src: sarcaArdente, alt: "A Sarça Ardente - Êxodo 3:2-4" },
     ]
   },
-  { 
-    type: "stacked" as const, 
+  {
+    type: "stacked" as const,
     images: [
       { src: pragasEgito, alt: "As 10 Pragas do Egito - Êxodo 7-12" },
       { src: multiplicacaoPaes, alt: "A Multiplicação dos Pães e Peixes - João 6:11" },
@@ -79,13 +80,16 @@ const activitiesImages = [
 
 const Index = () => {
   return (
-    <main className="min-h-screen bg-background relative">      
-      {/* Hero VSL with immediate CTA */}
+    <main className="min-h-screen bg-background relative">
+      {/* Hero VSL with incorporated VSL & CTAs */}
       <HeroVSLSection />
-      
-      {/* What you receive - immediately after CTA */}
+
+      {/* What you receive - immediately after Hero CTAs */}
       <ContentSummarySection />
-      
+
+      {/* Social Proof - Video Testimonials */}
+      <TestimonialsSection />
+
       {/* Product Carousels - Strategic placement right after content summary */}
       {/* Order: Desenhos (most visual) → Jogos → Atividades */}
       <ProductCarouselSection
@@ -96,7 +100,7 @@ const Index = () => {
         images={drawingsImages}
         layout="stacked"
       />
-      
+
       <ProductCarouselSection
         id="jogos"
         title="+ de 20 Jogos Bíblicos"
@@ -104,7 +108,7 @@ const Index = () => {
         accentColor="primary"
         images={gamesImages}
       />
-      
+
       <ProductCarouselSection
         id="atividades"
         title="+ de 600 Atividades Cristãs"
@@ -112,10 +116,10 @@ const Index = () => {
         accentColor="gold"
         images={activitiesImages}
       />
-      
+
       {/* Pain points + solution */}
       <PainPointsSection />
-      
+
       {/* Ease of use block */}
       <EaseOfUseSection />
 
@@ -124,19 +128,19 @@ const Index = () => {
 
       {/* Ministry section */}
       <MinistrySection />
-      
+
       {/* Pricing section */}
       <PricingSection />
-      
+
       {/* FAQ */}
       <FAQSection />
-      
+
       {/* Guarantee */}
       <GuaranteeSection />
-      
+
       {/* Final CTA */}
       <FinalCTASection />
-      
+
       <Footer />
     </main>
   );
